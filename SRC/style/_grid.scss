@@ -1,0 +1,59 @@
+BODY {
+	background-color: $color-bk;
+	color: $color-main;
+	height: auto !important;
+	min-height: 100vh;
+	overflow: auto;
+}
+
+.container {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+
+	@media (width >= $size-lg) {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		gap: 0;
+		scroll-snap-type: y mandatory;
+	}
+
+}
+
+.content {
+	position: relative;
+	min-height: 100dvh;
+	height: auto;
+	background: #FFFFFF;
+	scroll-snap-align: start;
+	overflow: hidden;
+
+	@media (height >= $size-sm) {
+		height: 100dvh;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
