@@ -1,0 +1,114 @@
+.fp-watermark {
+  display: none;
+}
+
+.fp-overflow {
+  height: 100dvh;
+
+  @media (width <= $size-sm) {
+    height: auto;
+  }
+
+}
+
+#fp-nav {
+  z-index: 9999;
+  top: 49%;
+}
+
+#fp-nav ul li {
+  width: 30px;
+  height: 15px;
+  margin: 11px;
+  line-height: 1 !important;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: $c-gray;
+  border: solid 1px $c-white;
+  height: 6px;
+  width: 6px;
+  margin: -3px 0 0 -3px;
+  opacity: 0.5;
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: $c-gray;
+  background: transparentize($c-gray-light, 0.75);
+  font-size: 12px;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+  right: 24px;
+  padding: 5px 15px 5px 8px;
+  border-radius: 3px 30px 30px 3px;
+}
+
+#fp-nav.fp-right {
+  right: 0;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  opacity: 1;
+}
+
+
+.commingsoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+
+  .commingsoon__img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+
+  .commingsoon__cs {
+    font: 500 70px/1 $font-family-big;
+    color: $c-gray-light;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px auto;
+    opacity: 0.5;
+  }
+
+  .commingsoon__gvlink {
+    position: relative;
+    font: 900 20px/1 $font-family;
+    text-transform: uppercase;
+    text-align: center;
+    color: $c-red;
+    padding: 5px;
+    text-decoration: none;
+
+    &:hover {
+      color: $c-gray;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      backface-visibility: visible;
+      animation-name: headShake;
+    }
+  }
+
+}
+
+.gvlogo-oldlogo {
+  width: 200px;
+  height: auto;
+  margin-top: 0.5rem;
+  opacity: 0.5;
+
+  @media (width <= $size-sm) {
+    width: 150px;
+  }
+
+}

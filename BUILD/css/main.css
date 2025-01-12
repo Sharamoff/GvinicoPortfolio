@@ -1427,52 +1427,349 @@ template {
   animation-name: slideOutUp;
 }
 
+#dddgvlogo .gvlogo__tl > div,
+#dddgvlogo .gvlogo__tr > div,
+#dddgvlogo .gvlogo-biglogo,
+#dddgvlogo .gvlogo__bl > img,
+#dddgvlogo .gvlogo__br > img {
+  visibility: hidden;
+}
+
 * {
   letter-spacing: -0.03rem;
 }
 
 BODY {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.03rem;
 }
+@media (width <= 768px) {
+  BODY {
+    font-size: 16px;
+  }
+}
+@media (height <= 576px) {
+  BODY {
+    font-size: 16px;
+  }
+}
 
 BODY {
   background-color: #FFFFFF;
-  color: #666677;
-  height: auto !important;
-  min-height: 100vh;
-  overflow: auto;
+  color: #3C3F42;
+  min-height: 100dvh;
+}
+@media (width <= 576px) {
+  BODY {
+    overflow: auto;
+  }
+}
+
+HTML {
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 .container {
-  display: block;
-  height: 100%;
+  min-height: auto;
+  scroll-snap-type: y mandatory;
   overflow: hidden;
-}
-@media (width >= 992px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    gap: 0;
-    scroll-snap-type: y mandatory;
-  }
 }
 
 .content {
   position: relative;
-  min-height: 100dvh;
-  height: auto;
-  background: #FFFFFF;
   scroll-snap-align: start;
-  overflow: hidden;
 }
-@media (height >= 576px) {
-  .content {
-    height: 100dvh;
+
+.fp-watermark {
+  display: none;
+}
+
+.fp-overflow {
+  height: 100dvh;
+}
+@media (width <= 576px) {
+  .fp-overflow {
+    height: auto;
   }
+}
+
+#fp-nav {
+  z-index: 9999;
+  top: 49%;
+}
+
+#fp-nav ul li {
+  width: 30px;
+  height: 15px;
+  margin: 11px;
+  line-height: 1 !important;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #3C3F42;
+  border: solid 1px #FFFFFF;
+  height: 6px;
+  width: 6px;
+  margin: -3px 0 0 -3px;
+  opacity: 0.5;
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: #3C3F42;
+  background: rgba(142, 145, 148, 0.25);
+  font-size: 12px;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+  right: 24px;
+  padding: 5px 15px 5px 8px;
+  border-radius: 3px 30px 30px 3px;
+}
+
+#fp-nav.fp-right {
+  right: 0;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  opacity: 1;
+}
+
+.commingsoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+.commingsoon .commingsoon__img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+.commingsoon .commingsoon__cs {
+  font: 500 70px/1 "League Gothic", "Arial Narrow", Helvetica, sans-serif;
+  color: #8E9194;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 30px auto;
+  opacity: 0.5;
+}
+.commingsoon .commingsoon__gvlink {
+  position: relative;
+  font: 900 20px/1 "Nunito", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #AE194A;
+  padding: 5px;
+  text-decoration: none;
+}
+.commingsoon .commingsoon__gvlink:hover {
+  color: #3C3F42;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  backface-visibility: visible;
+  animation-name: headShake;
+}
+
+.gvlogo-oldlogo {
+  width: 200px;
+  height: auto;
+  margin-top: 0.5rem;
+  opacity: 0.5;
+}
+@media (width <= 576px) {
+  .gvlogo-oldlogo {
+    width: 150px;
+  }
+}
+
+#gvlogo {
+  position: relative;
+  background: linear-gradient(to right, #3C3F42 50%, #FFFFFF 50%);
+}
+@media (width <= 576px) {
+  #gvlogo {
+    background: #FFFFFF;
+  }
+}
+
+.content-gvlogo {
+  min-height: 100dvh;
+  height: 100%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 0.8fr 1.2fr;
+  gap: 0;
+  grid-template-areas: "gvlogo__logo gvlogo__logo" "gvlogo__tl gvlogo__tr" "gvlogo__bl gvlogo__br";
+}
+@media (width <= 576px) {
+  .content-gvlogo {
+    display: block;
+    min-height: auto;
+  }
+}
+
+.gvlogo__logo {
+  grid-area: gvlogo__logo;
+  text-align: center;
+}
+@media (width <= 576px) {
+  .gvlogo__logo {
+    margin-left: -21%;
+  }
+}
+.gvlogo__logo svg {
+  max-width: 766px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.gvlogo__tl {
+  grid-area: gvlogo__tl;
+  background-color: #3C3F42;
+  color: #FFFFFF;
+}
+@media (width <= 576px) {
+  .gvlogo__tl {
+    margin-top: -20px;
+    padding-top: 50px !important;
+    text-align: center;
+  }
+}
+@media (height <= 576px) {
+  .gvlogo__tl {
+    padding-left: 10% !important;
+  }
+}
+
+.gvlogo__tr {
+  grid-area: gvlogo__tr;
+  background-color: #FFFFFF;
+  color: #3C3F42;
+}
+@media (width <= 576px) {
+  .gvlogo__tr {
+    text-align: center;
+  }
+}
+@media (height <= 576px) {
+  .gvlogo__tr {
+    padding-right: 10% !important;
+  }
+}
+
+.gvlogo__bl {
+  grid-area: gvlogo__bl;
+  background-color: #FFFFFF;
+  color: #3C3F42;
+}
+
+.gvlogo__br {
+  grid-area: gvlogo__br;
+  background-color: #AE194A;
+  color: #FFFFFF;
+}
+
+.gvlogo__tl,
+.gvlogo__tr {
+  padding: 20px 20%;
+}
+@media (width <= 576px) {
+  .gvlogo__tl,
+  .gvlogo__tr {
+    padding: 30px 15px;
+  }
+}
+.gvlogo__tl h2,
+.gvlogo__tr h2 {
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  color: #AE194A;
+}
+.gvlogo__tl p,
+.gvlogo__tr p {
+  margin: 0.5rem auto;
+  line-height: 1.4;
+}
+
+.gvlogo__tl {
+  font-weight: 300;
+}
+
+.gvlogo__tr {
+  font-weight: 500;
+}
+
+.gvlogo__bl,
+.gvlogo__br {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.gvlogo__bl img,
+.gvlogo__br img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media (width <= 576px) {
+  .gvlogo__bl {
+    border-top: dotted 1px rgba(142, 145, 148, 0.5);
+  }
+}
+
+.gvlogo-biglogo {
+  display: block;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+@media (width <= 1200px) {
+  .gvlogo-biglogo {
+    width: 250px;
+  }
+}
+@media (width <= 992px) {
+  .gvlogo-biglogo {
+    width: 180px;
+  }
+}
+@media (width <= 576px) {
+  .gvlogo-biglogo {
+    display: none;
+  }
+}
+.gvlogo-biglogo img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 20px 50px rgba(60, 63, 66, 0.5);
+}
+
+#gvillustration {
+  background: #eeeeec;
+  min-height: 100dvh;
+  height: 100%;
 }

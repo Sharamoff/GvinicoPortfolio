@@ -11,6 +11,16 @@ BODY {
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.03rem;
+
+
+  @media (width <= $size-md) {
+    font-size: $font-size-base-md;
+  }
+
+  @media (height <= $size-sm) {
+    font-size: $font-size-base-md;
+  }
+
 }
 
 

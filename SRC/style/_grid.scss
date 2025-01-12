@@ -1,38 +1,28 @@
 BODY {
 	background-color: $color-bk;
 	color: $color-main;
-	height: auto !important;
-	min-height: 100vh;
-	overflow: auto;
+	min-height: 100dvh;
+
+	@media (width <= $size-sm) {
+		overflow: auto;
+	}
+
+}
+
+HTML {
+	height: 100%;
+	scroll-behavior: smooth;
 }
 
 .container {
-	display: block;
-	height: 100%;
+	min-height: auto;
+	scroll-snap-type: y mandatory;
 	overflow: hidden;
-
-	@media (width >= $size-lg) {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-		gap: 0;
-		scroll-snap-type: y mandatory;
-	}
-
 }
 
 .content {
 	position: relative;
-	min-height: 100dvh;
-	height: auto;
-	background: #FFFFFF;
 	scroll-snap-align: start;
-	overflow: hidden;
-
-	@media (height >= $size-sm) {
-		height: 100dvh;
-	}
-
 }
 
 
