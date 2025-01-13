@@ -4,14 +4,12 @@ const
 	gulp = require('gulp'),
 	sass = require('gulp-sass')(require('sass')),
 	plumber = require('gulp-plumber'),
-	autoprefixer = require('gulp-autoprefixer').default,
+	autoprefixer = require('gulp-autoprefixer'),
 	rigger = require('gulp-rigger'),
 	uglify = require('gulp-uglify'),
 	cssmin = require('gulp-clean-css'),
 	rimraf = require('rimraf'),
-	browserSync = require("browser-sync"),
-	cache = require('gulp-cache'),
-	reload = browserSync.reload;
+	browserSync = require('browser-sync').create();
 
 const path = {
 	build: {
@@ -22,47 +20,45 @@ const path = {
 	},
 	src: {
 		html:   'SRC/*.html',
-		js:     'SRC/js/*.js',
+		js:     'SRC/js/*.*js',
 		style:  'SRC/style/*.scss',
 		img:    'SRC/img/**/*.*'
 	},
 	watch: {
 		html:   'SRC/**/*.html',
-		js:     'SRC/js/**/*.js',
+		js:     'SRC/js/**/*.*js',
 		style:  'SRC/style/**/*.scss',
 		img:    'SRC/img/**/*.*'
 	},
-	clean: './build'
+	clean: './BUILD'
 };
 
 const config = {
 	server: {
-		baseDir: "./build"
+		baseDir: "./BUILD"
 	},
 	tunnel: false,
 	host: 'localhost',
 	port: 3001,
-	logPrefix: "Sharamoff"
+	logPrefix: "Promoting"
 };
 
-gulp.task('html:build', function(done) {
+gulp.task('html:build', () => {
 	return gulp.src(path.src.html)
 		.pipe(rigger())
 		.pipe(gulp.dest(path.build.html))
-		.pipe(reload({stream: true}));
-	done();
+		.pipe(browserSync.stream())
 });
 
-gulp.task('js:build', function(done) {
+gulp.task('js:build', () => {
 	return gulp.src(path.src.js)
 		.pipe(rigger())
 		.pipe(uglify())
 		.pipe(gulp.dest(path.build.js))
-		.pipe(reload({stream: true}));
-	done();
+		.pipe(browserSync.stream())
 });
 
-gulp.task('style:build', function(done) {
+gulp.task('style:build', () => {
 	return gulp.src(path.src.style)
 		.pipe(plumber())
 		.pipe(sass({
@@ -72,45 +68,40 @@ gulp.task('style:build', function(done) {
 		.pipe(autoprefixer())
 		//.pipe(cssmin())
 		.pipe(gulp.dest(path.build.css))
-		.pipe(reload({stream: true}));
-	done();
+		.pipe(browserSync.stream())
 });
 
-gulp.task('image:build', function(done) {
+gulp.task('image:build', () => {
 	return gulp.src(path.src.img)
 		.pipe(gulp.dest(path.build.img))
-		.pipe(reload({stream: true}));
-	done();
+		.pipe(browserSync.stream())
 });
 
-
 gulp.task('build', gulp.parallel(
-	'html:build',
-	'js:build',
-	'style:build',
-	'image:build'
+		'html:build',
+		'js:build',
+		'style:build',
+		'image:build'
 	)
 );
 
 
-gulp.task('watch', function(done) {
+gulp.task('watch', () => {
 	gulp.watch(path.watch.html,  gulp.series('html:build'));
 	gulp.watch(path.watch.js,    gulp.series('js:build'));
 	gulp.watch(path.watch.style, gulp.series('style:build'));
 	gulp.watch(path.watch.img, 	 gulp.series('image:build'));
-	done();
 });
 
 
-gulp.task('webserver', function(done) {
+gulp.task('webserver', () => {
 	browserSync.init(config);
-	done();
 });
 
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', (cb) => {
 	rimraf(path.clean, cb);
 });
 
 
-gulp.task('default', gulp.series('build', 'webserver', 'watch'));
+gulp.task('default', gulp.series('build', gulp.parallel('webserver', 'watch')));
