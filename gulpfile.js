@@ -66,7 +66,7 @@ gulp.task('style:build', () => {
 			errLogToConsole: true
 		}))
 		.pipe(autoprefixer())
-		//.pipe(cssmin())
+		.pipe(cssmin())
 		.pipe(gulp.dest(path.build.css))
 		.pipe(browserSync.stream())
 });
