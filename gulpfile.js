@@ -13,22 +13,25 @@ const
 
 const path = {
 	build: {
-		html:   'BUILD/',
-		js:     'BUILD/js/',
-		css:    'BUILD/css/',
-		img:    'BUILD/img/'
+		html:       'BUILD/',
+		js:         'BUILD/js/',
+		css:        'BUILD/css/',
+		img:        'BUILD/img/',
+		animation:  'BUILD/animation/',
 	},
 	src: {
-		html:   'SRC/*.html',
-		js:     'SRC/js/*.*js',
-		style:  'SRC/style/*.scss',
-		img:    'SRC/img/**/*.*'
+		html:       'SRC/*.html',
+		js:         'SRC/js/*.*js',
+		style:      'SRC/style/*.scss',
+		img:        'SRC/img/**/*.*',
+		animation:  'SRC/animation/',
 	},
 	watch: {
-		html:   'SRC/**/*.html',
-		js:     'SRC/js/**/*.*js',
-		style:  'SRC/style/**/*.scss',
-		img:    'SRC/img/**/*.*'
+		html:       'SRC/**/*.html',
+		js:         'SRC/js/**/*.*js',
+		style:      'SRC/style/**/*.scss',
+		img:        'SRC/img/**/*.*',
+		animation:  'SRC/animation/**/*.*',
 	},
 	clean: './BUILD'
 };
@@ -77,20 +80,28 @@ gulp.task('image:build', () => {
 		.pipe(browserSync.stream())
 });
 
+gulp.task('animation:build', () => {
+	return gulp.src(path.src.animation)
+		.pipe(gulp.dest(path.build.animation))
+		.pipe(browserSync.stream())
+});
+
 gulp.task('build', gulp.parallel(
 		'html:build',
 		'js:build',
 		'style:build',
-		'image:build'
+		'image:build',
+		'animation:build'
 	)
 );
 
 
 gulp.task('watch', () => {
-	gulp.watch(path.watch.html,  gulp.series('html:build'));
-	gulp.watch(path.watch.js,    gulp.series('js:build'));
-	gulp.watch(path.watch.style, gulp.series('style:build'));
-	gulp.watch(path.watch.img, 	 gulp.series('image:build'));
+	gulp.watch(path.watch.html,       gulp.series('html:build'));
+	gulp.watch(path.watch.js,         gulp.series('js:build'));
+	gulp.watch(path.watch.style,      gulp.series('style:build'));
+	gulp.watch(path.watch.img, 	      gulp.series('image:build'));
+	gulp.watch(path.watch.animation,  gulp.series('animation:build'));
 });
 
 
