@@ -31,16 +31,22 @@
 
 .gvlogo__logo {
 	grid-area: gvlogo__logo;
-	text-align: center;
+	display:  flex;
+	justify-content: center;
+	align-items: start;
 
 	@media (width <= $size-sm) {
 		margin-left: -21%;
 	}
 
-	svg {
+	#logo-lottie {
+		width: 100%;
 		max-width: 766px;
 		height: auto;
+		max-height: 250px !important;
 		margin: 0 auto;
+		cursor: url("../img/acursor.png"), auto;
+		aspect-ratio: 766 / 250;
 	}
 
 }
@@ -51,8 +57,7 @@
 	color: $c-white;
 
 	@media (width <= $size-sm) {
-		margin-top: -20px;
-		padding-top: 50px !important;
+		margin-top: 0;
 		text-align: center;
 	}
 

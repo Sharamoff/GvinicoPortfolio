@@ -21,14 +21,14 @@ const path = {
 	},
 	src: {
 		html:       'SRC/*.html',
-		js:         'SRC/js/*.*js',
+		js:         'SRC/js/*.js',
 		style:      'SRC/style/*.scss',
 		img:        'SRC/img/**/*.*',
-		animation:  'SRC/animation/',
+		animation:  'SRC/animation/**/*.*',
 	},
 	watch: {
 		html:       'SRC/**/*.html',
-		js:         'SRC/js/**/*.*js',
+		js:         'SRC/js/**/*.js',
 		style:      'SRC/style/**/*.scss',
 		img:        'SRC/img/**/*.*',
 		animation:  'SRC/animation/**/*.*',
@@ -43,7 +43,7 @@ const config = {
 	tunnel: false,
 	host: 'localhost',
 	port: 3001,
-	logPrefix: "Promoting"
+	logPrefix: "Sharamoff"
 };
 
 gulp.task('html:build', () => {
@@ -56,7 +56,7 @@ gulp.task('html:build', () => {
 gulp.task('js:build', () => {
 	return gulp.src(path.src.js)
 		.pipe(rigger())
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(browserSync.stream())
 });
