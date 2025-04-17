@@ -36,7 +36,7 @@
 	align-items: start;
 
 	@media (width <= $size-sm) {
-		margin-left: -21%;
+		margin-left: -23%;
 	}
 
 	#logo-lottie {
@@ -45,7 +45,7 @@
 		height: auto;
 		max-height: 250px !important;
 		margin: 0 auto;
-		cursor: url("../img/acursor.png"), auto;
+		//cursor: url("../img/acursor.png"), auto;
 		aspect-ratio: 766 / 250;
 	}
 

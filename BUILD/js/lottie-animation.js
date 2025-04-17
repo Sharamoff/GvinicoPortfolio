@@ -51,7 +51,9 @@ sections.forEach(section => observer.observe(section));
 
 Object.keys(animations).forEach(animationId => {
 	const canvas = document.querySelector(`#${animationId}`);
+	/*
 	canvas.addEventListener('click', () => {
 		restartAnimation(animationId);
 	});
+	*/
 });
