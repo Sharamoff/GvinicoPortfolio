@@ -18,68 +18,34 @@
 	grid-template-rows: auto 0.8fr 1.2fr;
 	gap: 0;
 	grid-template-areas:
-    "gvlogo__logo gvlogo__logo"
+    "hdr-content hdr-content"
     "gvlogo__tl gvlogo__tr"
     "gvlogo__bl gvlogo__br";
 
 	@media (width <= $size-sm) {
 		display: block;
 		min-height: auto;
+
+		.hdr-content {
+			margin-left: -23%;
+		}
+
 	}
 
 }
 
-.gvlogo__logo {
-	grid-area: gvlogo__logo;
-	display:  flex;
-	justify-content: center;
-	align-items: start;
 
-	@media (width <= $size-sm) {
-		margin-left: -23%;
-	}
-
-	#logo-lottie {
-		width: 100%;
-		max-width: 766px;
-		height: auto;
-		max-height: 250px !important;
-		margin: 0 auto;
-		//cursor: url("../img/acursor.png"), auto;
-		aspect-ratio: 766 / 250;
-	}
-
-}
 
 .gvlogo__tl {
 	grid-area: gvlogo__tl;
 	background-color: $c-gray;
 	color: $c-white;
-
-	@media (width <= $size-sm) {
-		margin-top: 0;
-		text-align: center;
-	}
-
-	@media (height <= $size-sm) {
-		padding-left: 10% !important;
-	}
-
 }
 
 .gvlogo__tr {
 	grid-area: gvlogo__tr;
 	background-color: $c-white;
 	color: $c-gray;
-
-	@media (width <= $size-sm) {
-		text-align: center;
-	}
-
-	@media (height <= $size-sm) {
-		padding-right: 10% !important;
-	}
-
 }
 
 .gvlogo__bl {
@@ -92,39 +58,6 @@
 	grid-area: gvlogo__br;
 	background-color: $c-red;
 	color: $c-white;
-}
-
-.gvlogo__tl,
-.gvlogo__tr {
-	padding: 20px 20%;
-
-	@media (width <= $size-sm) {
-		padding: 30px 15px;
-	}
-
-	h2 {
-		margin: 0 auto;
-		font-size: 1rem;
-		line-height: 1rem;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: normal;
-		color: $c-red;
-	}
-
-	p {
-		margin: 0.5rem auto;
-		line-height: 1.4;
-	}
-
-}
-
-.gvlogo__tl {
-	font-weight: 300;
-}
-
-.gvlogo__tr {
-	font-weight: 500;
 }
 
 .gvlogo__bl,
@@ -145,7 +78,7 @@
 .gvlogo__bl {
 
 	@media (width <= $size-sm) {
-		border-top: dotted 1px transparentize($c-gray-light, 0.5);
+		background-color: $c-gray-lighter;
 	}
 
 }
@@ -172,6 +105,10 @@
 		display: none;
 	}
 
+	@media (height <= $size-sm) {
+		display: none;
+	}
+
 	img {
 		width: 100%;
 		height: auto;
@@ -182,7 +119,17 @@
 }
 
 
+.gvlogo-oldlogo {
+	width: 200px;
+	height: auto;
+	margin-top: 0.5rem;
+	opacity: 0.5;
 
+	@media (width <= $size-sm) {
+		width: 150px;
+	}
+
+}
 
 
 
