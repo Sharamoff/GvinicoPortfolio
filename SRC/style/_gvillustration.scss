@@ -36,6 +36,7 @@
 .gvillustration__l,
 .gvillustration__r {
 	position: relative;
+	overflow: hidden;
 }
 
 .gvillustration__r {
@@ -59,6 +60,19 @@
 
 	@media (width <= $size-sm) {
 		position: relative;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+.blockill-l {
+
+	@media (width <= $size-sm) {
+		position: relative;
 		height: 450px;
 	}
 
@@ -70,12 +84,20 @@
 		bottom: 0;
 	}
 
-	img {
-		width: 100%;
-		height: auto;
+}
+
+.blockill-r {
+
+	@media (width <= $size-sm) {
+		height: 350px;
+	}
+
+	@media (width <= 440px) {
+		height: 240px;
 	}
 
 }
+
 
 .ill-l {
 	position: relative;
@@ -222,7 +244,152 @@
 
 }
 
+.blockill-stains {
+	margin-right: -3vw;
+	margin-left: 3vw;
 
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+.ill-r {
+	position: relative;
+	height: 100%;
+
+
+	.g4-r {
+		position: absolute;
+		z-index: 5;
+		width: 24vw;
+		height: auto;
+		aspect-ratio: 460 / 690;
+		left: 0;
+		bottom: -15vh;
+		opacity: 0.9;
+
+		@media (width <= $size-xl) {
+			width: 26vw;
+			left: -4vw;
+			bottom: -12vh;
+		}
+
+		@media (width <= $size-md) {
+			bottom: -7vh;
+		}
+
+		@media (width <= $size-sm)  {
+			width: 50vw;
+			left: -6vw;
+			bottom: -10vh;
+		}
+
+		@media (height <= $size-sm) {
+			display: none;
+		}
+
+	}
+
+
+	.g3-l {
+		position: absolute;
+		z-index: 4;
+		width: 24vw;
+		height: auto;
+		aspect-ratio: 460 / 690;
+		right: 4vw;
+		bottom: -15vh;
+		opacity: 0.9;
+
+		@media (width <= $size-xl) {
+			width: 26vw;
+			right: 6vw;
+			bottom: -12vh;
+		}
+
+		@media (width <= $size-md) {
+			bottom: -7vh;
+		}
+
+		@media (width <= $size-sm) {
+			width: 50vw;
+			right: 12vw;
+			bottom: -10vh;
+		}
+
+		@media (height <= $size-sm) {
+			display: none;
+		}
+
+	}
+
+
+	.g3-r {
+		position: absolute;
+		z-index: 3;
+		width: 22vw;
+		height: auto;
+		aspect-ratio: 387 / 580;
+		right: -7vw;
+		bottom: -14vh;
+
+		@media (width <= $size-xl) {
+			width: 22vw;
+			right: -4vw;
+			bottom: -10vh;
+		}
+
+		@media (width <= $size-md) {
+			bottom: -5vh;
+		}
+
+		@media (width <= $size-sm) {
+			width: 40vw;
+			right: -5vw;
+			bottom: -7vh;
+		}
+
+		@media (height <= $size-sm) {
+			display: none;
+		}
+
+	}
+
+	.g0 {
+		position: absolute;
+		z-index: 2;
+		width: 16vw;
+		height: auto;
+		aspect-ratio: 347 / 520;
+		right: 18vw;
+		bottom: -10vh;
+
+		@media (width <= $size-xl) {
+			width: 20vw;
+			right: 18vw;
+			bottom: -8vh;
+		}
+
+		@media (width <= $size-md) {
+			bottom: -5vh;
+		}
+
+		@media (width <= $size-sm) {
+			width: 35vw;
+			right: 37vw;
+			bottom: -6vh;
+		}
+
+		@media (height <= $size-sm) {
+			display: none;
+		}
+
+	}
+
+
+}
 
 
 
