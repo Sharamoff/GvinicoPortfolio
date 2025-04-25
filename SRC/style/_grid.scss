@@ -32,6 +32,11 @@ HTML {
 	display: flex;
 	justify-content: center;
 	align-items: start;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .hdr-animation {
