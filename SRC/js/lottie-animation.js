@@ -8,14 +8,12 @@ const animations = {
 		canvas: document.querySelector('#logo-lottie'),
 		src: "animation/hdr-logo.lottie"
 	}),
-	/*
 	'illustration-lottie': new DotLottie({
 		autoplay: true,
 		loop: true,
 		canvas: document.querySelector('#illustration-lottie'),
 		src: "../animation/hdr-illustration.lottie" // Предполагаемый путь
 	})
-	*/
 };
 
 const timeouts = {};
