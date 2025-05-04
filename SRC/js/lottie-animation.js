@@ -12,7 +12,7 @@ const animations = {
 		autoplay: true,
 		loop: true,
 		canvas: document.querySelector('#illustration-lottie'),
-		src: "../animation/hdr-illustration.lottie" // Предполагаемый путь
+		src: "animation/hdr-illustration.lottie"
 	})
 };
 
@@ -25,7 +25,7 @@ const restartAnimation = (animationId) => {
 		animation.stop();
 		animation.setFrame(0); // all section animations will be set to frame 370 (this is beginning of end animation)
 		animation.play();
-	}, 200); // Задержка 200 мс
+	}, 200);
 };
 
 const observer = new IntersectionObserver((entries) => {
