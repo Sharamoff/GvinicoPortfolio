@@ -1,0 +1,120 @@
+#gvmap {
+	position: relative;
+	background-color: $c-gray;
+}
+
+.content-gvmap {
+	min-height: 100dvh;
+	height: 100%;
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	gap: 0;
+	grid-template-areas:
+    "hdr-content"
+    "gvmap__c";
+
+	@media (width <= $size-sm) {
+		display: block;
+		min-height: auto;
+
+		.hdr-content {
+			margin-left: -7%;
+			margin-right: -16%;
+		}
+
+	}
+
+}
+
+.gvmap__c  {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (width <= $size-sm) {
+		display: block;
+	}
+
+	.taskdesc {
+		position: absolute; 
+		z-index: 5;
+		padding: 0;
+
+		@media (width <= $size-sm) {
+			position: relative;
+		}
+
+		&.td--problem {
+			left: 10%;
+			top: 40px;
+			width: clamp(200px, 40vw, 600px);
+
+			@media (width <= $size-sm) {
+				left: 0;
+				top: 0;
+				width: auto;
+				padding: 30px 15px 0 15px;
+			}
+
+		}
+
+		&.td--solution {
+			right: 10%;
+			top: 40px;
+			width: clamp(200px, 30vw, 600px);
+
+			@media (width <= $size-sm) {
+				right: 0;
+				top: 0;
+				width: auto;
+				padding: 30px 15px 0 15px;
+			}
+
+		}
+
+		p {
+			color: $c-white;
+		}
+
+	}
+
+}
+
+.map-animation {
+	width: 100%;
+	max-width: 1400px;
+	height: auto;
+	margin: 80px auto 0 auto;
+	aspect-ratio: 1400 / 720;
+	overflow: hidden;
+
+	@media (width <= $size-sm) {
+		margin: 15px 0 30px -18%;
+		width: 120%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
