@@ -74,13 +74,20 @@
 
 }
 
-.gvlogo__bl {
 
-	@media (width <= $size-sm) {
+@media (width <= $size-sm) {
+
+	.gvlogo__tl {
+		margin-top: -1px;
+	}
+
+	.gvlogo__bl {
 		background-color: $c-gray-lighter;
 	}
 
 }
+
+
 
 .gvlogo-biglogo	{
 	display: block;
