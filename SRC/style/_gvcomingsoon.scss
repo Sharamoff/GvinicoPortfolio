@@ -38,8 +38,13 @@
 		color: $c-gray-light;
 		text-align: center;
 		text-transform: uppercase;
-		margin: 30px auto;
+		margin: 40px auto;
 		opacity: 0.5;
+
+		@media (width <= $size-sm) {
+			font-size: 50px;
+		}
+
 	}
 
 	.commingsoon__gvlink {
@@ -48,7 +53,6 @@
 		text-transform: uppercase;
 		text-align: center;
 		color: $c-red;
-		padding: 5px;
 		text-decoration: none;
 
 		&:hover {

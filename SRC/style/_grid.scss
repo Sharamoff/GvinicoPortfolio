@@ -1,12 +1,11 @@
 BODY {
-	background-color: $color-bk;
-	color: $color-main;
-	min-height: 100dvh;
+    background-color: $color-bk;
+    color: $color-main;
+    min-height: 100dvh;
 
-	@media (width <= $size-sm) {
-		overflow: auto;
-	}
-
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        overflow-y: auto;
+    }
 }
 
 HTML {
@@ -15,16 +14,35 @@ HTML {
 }
 
 .container {
-	min-height: auto;
-	scroll-snap-type: y mandatory;
-	overflow: hidden;
+    min-height: auto;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-type: none;
+    }
 }
 
 .content {
-	position: relative;
-	scroll-snap-align: start;
+    position: relative;
+    scroll-snap-align: start;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-align: none;
+    }
 }
 
+
+a {
+	color: #6D6F71;
+	transition: all 0.5s;
+	text-decoration: none;
+
+	&:hover {
+		color: #1A1C1F;
+	}
+
+}
 
 
 .hdr-content {
@@ -86,20 +104,3 @@ HTML {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

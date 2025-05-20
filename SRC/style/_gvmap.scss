@@ -17,10 +17,9 @@
 
 	@media (width <= $size-sm) {
 		display: block;
-		min-height: auto;
 
 		.hdr-content {
-			margin-left: -7%;
+			margin-left: -16%;
 			margin-right: -16%;
 		}
 
@@ -78,6 +77,36 @@
 
 		p {
 			color: $c-white;
+		}
+
+	}
+
+	.a--outher {
+		display: block;
+		margin-top: 8px;
+		color: $c-red;
+		border-color: transparent;
+		font-size: 20px;
+		line-height: 1;
+		font-weight: bold;
+
+		svg {
+			margin-right: 6px;
+			opacity: 0.25;
+			transition: all 0.5s;
+		}
+
+		&:hover {
+			color: $c-white;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			backface-visibility: visible;
+			animation-name: headShake;
+
+			svg {
+				opacity: 1;
+			}
+
 		}
 
 	}
