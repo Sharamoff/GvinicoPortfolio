@@ -1,0 +1,106 @@
+BODY {
+    background-color: $color-bk;
+    color: $color-main;
+    min-height: 100dvh;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        overflow-y: auto;
+    }
+}
+
+HTML {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+.container {
+    min-height: auto;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-type: none;
+    }
+}
+
+.content {
+    position: relative;
+    scroll-snap-align: start;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-align: none;
+    }
+}
+
+
+a {
+	color: #6D6F71;
+	transition: all 0.5s;
+	text-decoration: none;
+
+	&:hover {
+		color: #1A1C1F;
+	}
+
+}
+
+
+.hdr-content {
+	grid-area: hdr-content;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.hdr-animation {
+	width: 100%;
+	max-width: 766px;
+	height: auto;
+	max-height: 250px !important;
+	margin: 0 auto;
+	//cursor: url("../img/acursor.png"), auto;
+	aspect-ratio: 766 / 250;
+
+	@media (height <= $size-sm) {
+		width: 400px;
+	}
+
+}
+
+
+
+.taskdesc {
+	padding: 20px 20%;
+
+	@media (width <= $size-sm) {
+		padding: 30px 15px;
+		text-align: center;
+	}
+
+	@media (height <= $size-sm) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	h2 {
+		margin: 0 auto;
+		font-size: 1rem;
+		line-height: 1rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: normal;
+		color: $c-red;
+	}
+
+	p {
+		margin: 0.5rem auto;
+		line-height: 1.4;
+		font-weight: 500;
+	}
+
+}
