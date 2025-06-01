@@ -1,12 +1,6 @@
 #gvlogo {
 	position: relative;
 	background: linear-gradient(to right, $c-gray 50%, $c-white 50%);
-
-
-	@media (width <= $size-sm) {
-		background: $c-white;
-	}
-
 }
 
 .content-gvlogo {
@@ -15,7 +9,7 @@
 	display: grid;
 	grid-auto-columns: 1fr;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto 0.8fr 1.2fr;
+	grid-template-rows: auto 0.7fr 1.3fr;
 	gap: 0;
 	grid-template-areas:
     "hdr-content hdr-content"
@@ -23,12 +17,14 @@
     "gvlogo__bl gvlogo__br";
 
 	@media (width <= $size-sm) {
-		display: block;
-
-		.hdr-content {
-			margin-left: -23%;
-		}
-
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+    "hdr-content"
+    "gvlogo__tl"
+    "gvlogo__tr"
+    "gvlogo__bl"
+		"gvlogo__br";
 	}
 
 }
@@ -59,6 +55,15 @@
 	color: $c-white;
 }
 
+.gvlogo__tl,
+.gvlogo__tr {
+
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+		//padding: 10px 40px;
+	}
+
+}
+
 .gvlogo__bl,
 .gvlogo__br {
 	display: flex;
@@ -72,14 +77,14 @@
 		height: auto;
 	}
 
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+		padding: 10px 40px;
+	}
+
 }
 
 
 @media (width <= $size-sm) {
-
-	.gvlogo__tl {
-		margin-top: -1px;
-	}
 
 	.gvlogo__bl {
 		background-color: $c-gray-lighter;
@@ -92,7 +97,7 @@
 .gvlogo-biglogo	{
 	display: block;
 	position: absolute;
-	top: 53%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 300px;

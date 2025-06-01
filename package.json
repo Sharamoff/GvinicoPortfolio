@@ -17,5 +17,8 @@
     "gulp-uglify": "^3.0.2",
     "rimraf": "^6.0.1",
     "sass": "1.78.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
   }
 }

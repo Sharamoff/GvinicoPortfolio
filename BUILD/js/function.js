@@ -2,6 +2,7 @@
 new WOW().init();
 
 document.addEventListener('DOMContentLoaded', () => {
+	
 	const sections = document.querySelectorAll('.content');
 	let currentSectionIndex = 0;
 	let isScrolling = false;
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		handleScroll(e.deltaY > 0 ? 'down' : 'up');
 	}
 	
-	// Инициализация обработчиков
 	function initializeHandlers() {
 		if (!isMobileDevice()) {
 			document.addEventListener('wheel', handleWheel, { passive: false });
@@ -64,13 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				break;
 		}
 	});
-	
-	
-	// Инициализация при загрузке
+
 	initializeHandlers();
-	
-	// Отслеживание изменения размера окна
+
 	window.addEventListener('resize', () => {
 		initializeHandlers();
 	});
+	
 });

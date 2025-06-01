@@ -55,19 +55,21 @@ a {
 		width: 100%;
 		height: auto;
 	}
+
+
+
 }
 
 .hdr-animation {
 	width: 100%;
 	max-width: 766px;
 	height: auto;
-	max-height: 250px !important;
 	margin: 0 auto;
-	//cursor: url("../img/acursor.png"), auto;
 	aspect-ratio: 766 / 250;
 
-	@media (height <= $size-sm) {
-		width: 400px;
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+		height: 100px;
+		width: auto;
 	}
 
 }
@@ -78,7 +80,7 @@ a {
 	padding: 20px 20%;
 
 	@media (width <= $size-sm) {
-		padding: 30px 15px;
+		padding: 20px 15px;
 		text-align: center;
 	}
 
@@ -101,6 +103,22 @@ a {
 		margin: 0.5rem auto;
 		line-height: 1.4;
 		font-weight: 500;
+	}
+
+}
+
+
+.i-scroll {
+	position: absolute;
+	z-index: 999;
+	width: 64px;
+	height: 94px;
+	background-image: url("../img/i-scroll.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		display: none !important;
 	}
 
 }
