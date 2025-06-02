@@ -21,13 +21,12 @@
     "gvillustration__l gvillustration__r";
 
 	@media (width <= $size-sm) {
-		display: block;
-
-		.hdr-content {
-			margin-left: -7%;
-			margin-right: -16%;
-		}
-
+		grid-template-columns: 1fr;
+		grid-template-rows: 100px auto;
+		grid-template-areas:
+    "hdr-content"
+    "gvillustration__l"
+    "gvillustration__r";
 	}
 
 }
@@ -53,12 +52,13 @@
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	height: 700px;
+	height: 720px;
 	overflow: hidden;
 	z-index: 1;
 
 	@media (width <= $size-sm) {
 		position: relative;
+		height: auto;
 	}
 
 	img {

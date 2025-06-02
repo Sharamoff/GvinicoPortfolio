@@ -56,8 +56,6 @@ a {
 		height: auto;
 	}
 
-
-
 }
 
 .hdr-animation {
@@ -113,6 +111,9 @@ a {
 	z-index: 999;
 	width: 64px;
 	height: 94px;
+	left: 50%;
+	bottom: 50px;
+	transform: translateX(-50%);
 	background-image: url("../img/i-scroll.svg");
 	background-size: contain;
 	background-repeat: no-repeat;

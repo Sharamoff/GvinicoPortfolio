@@ -18,7 +18,7 @@
 
 	@media (width <= $size-sm) {
 		grid-template-columns: 1fr;
-		grid-template-rows: auto;
+		grid-template-rows: 100px auto;
 		grid-template-areas:
     "hdr-content"
     "gvlogo__tl"
@@ -28,8 +28,6 @@
 	}
 
 }
-
-
 
 .gvlogo__tl {
 	grid-area: gvlogo__tl;
@@ -55,14 +53,6 @@
 	color: $c-white;
 }
 
-.gvlogo__tl,
-.gvlogo__tr {
-
-	@media (max-width: $size-sm), (max-height: $size-sm) {
-		//padding: 10px 40px;
-	}
-
-}
 
 .gvlogo__bl,
 .gvlogo__br {
