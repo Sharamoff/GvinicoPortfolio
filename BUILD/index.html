@@ -122,6 +122,56 @@
 
 
 
+	<section class="content" id="gvmap">
+
+		<div class="content-gvmap">
+
+			<div class="hdr-content">
+				<canvas class="hdr-animation" id="hdr-map-lottie"></canvas>
+			</div>
+
+			<div class="gvmap__c">
+
+				<div class="taskdesc td--problem">
+					<h2 class="h2--red">Problem:</h2>
+					<p>It is necessary to create a bright visual navigation through the&nbsp;wine&nbsp;regions.</p>
+				</div>
+				<div class="taskdesc td--solution">
+					<h2 class="h2--red">Solution:</h2>
+					<p>I decided to present navigation through Georgia's wine regions as an interactive map, from the country's scale to the terroir. The map is drawn and programmed as SVG slides and linked to information from the&nbsp;site's&nbsp;database.<br>
+						<a class="a--outher" href="https://gvinico.com/pages/georgian-wine-regions" target="_blank" title="Go to https://gvinico.com/pages/georgian-wine-regions website page">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6 1H3C1.89543 1 1 1.89543 1 3V13C1 14.1046 1.89543 15 3 15H13C14.1046 15 15 14.1046 15 13V10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+								<path d="M10 1H15V6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+								<path d="M6.29289 8.29289C5.90237 8.68342 5.90237 9.31658 6.29289 9.70711C6.68342 10.0976 7.31658 10.0976 7.70711 9.70711L6.29289 8.29289ZM15 1L14.2929 0.292893L6.29289 8.29289L7 9L7.70711 9.70711L15.7071 1.70711L15 1Z" fill="white"/>
+							</svg>
+							gvinico.com
+						</a>
+					</p>
+				</div>
+
+				<div class="map-animation" id="map-lottie"></div>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+				<script>
+					const mapanimation = lottie.loadAnimation({
+						container: document.getElementById('map-lottie'),
+						loop: true,
+						autoplay: false,
+						path: 'animation/map.json'
+					});
+					setTimeout(() => {
+						mapanimation.play();
+					}, 3000);
+				</script>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+
 	<section class="content" id="gvcomingsoon">
 
 		<div class="commingsoon">
