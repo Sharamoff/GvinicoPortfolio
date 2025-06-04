@@ -119,7 +119,10 @@ a {
 	background-repeat: no-repeat;
 
 	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-		display: none !important;
+		width: 44px;
+		height: 64px;
+		bottom: 20px;
+		background-image: url("../img/i-touch.svg");
 	}
 
 }
