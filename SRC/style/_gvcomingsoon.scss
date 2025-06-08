@@ -6,6 +6,7 @@
 	&:before {
 		content: "";
 		display: block;
+		margin-top: 1px;
 		height: 1px;
 		background-image: repeating-linear-gradient(
 				to right,

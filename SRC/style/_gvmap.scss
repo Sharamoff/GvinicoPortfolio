@@ -1,6 +1,15 @@
 #gvmap {
 	position: relative;
 	background-color: $c-gray;
+	background-image: url(../img/gvmap-bg.jpg);
+	background-position: 50% bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	@media (width <= $size-sm) {
+		background-size: 250%;
+	}
+
 }
 
 .content-gvmap {
