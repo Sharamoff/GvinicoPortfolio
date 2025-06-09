@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".gvmap__c .td--solution",
     ".map-animation",
     
+    ".gvschemes__c .td--problem",
+    ".gvschemes__c .td--solution",
+    ".gvschemes__s img",
+    
   ], {
     opacity: 0
   });
@@ -46,6 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.set(".gvmap__c .td--problem", { x: -150 });
   gsap.set(".gvmap__c .td--solution", { x: 150 });
   gsap.set(".map-animation", { y: 100 });
+  
+  gsap.set(".gvschemes__c .td--problem", { x: -150 });
+  gsap.set(".gvschemes__c .td--solution", { x: 150 });
+  gsap.set(".gvschemes__s img", { y: 100 });
   
 
   // Logo
@@ -234,6 +242,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // end Map
 
+  
+  // Schemes
+  
+  const TL_Schemes = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#gvschemes",
+      start: "top top",
+      end: "+=100%",
+      scrub: 3,
+      pin: true,
+      pinSpacing: true,
+      toggleActions: "play none none reverse"
+    }
+  });
+
+  TL_Schemes.to(".gvschemes__c .td--problem", {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  TL_Schemes.to(".gvschemes__c .td--solution", {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  }, "-=0.5");
+  
+  gsap.utils.toArray('.gvschemes__s img').forEach((img, index) => {
+    gsap.set(img, {
+      opacity: 0,
+      y: 100
+    });
+
+    TL_Schemes.to(img, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+    }, index * 0.2);
+  });
+ 
+
+  // end Schemes
 
   
   

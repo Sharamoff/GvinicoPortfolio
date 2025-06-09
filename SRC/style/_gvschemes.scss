@@ -1,0 +1,113 @@
+#gvschemes {
+	position: relative;
+	background-color: $c-white;
+}
+
+.content-gvschemes {
+	min-height: 100dvh;
+	height: 100%;
+}
+
+.gvschemes__c {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+
+	@media (width <= $size-sm) {
+		display: block;
+	}
+
+	.taskdesc {
+		padding: 40px 0 0 0;
+
+		&.td--problem {
+			margin-left: 10%;
+			width: clamp(200px, 40vw, 600px);
+
+			@media (width <= $size-sm) {
+				margin-left: 0;
+				width: auto;
+				padding: 30px 15px 0 15px;
+			}
+
+		}
+
+		&.td--solution {
+			margin-right: 10%;
+			width: clamp(200px, 30vw, 600px);
+
+			@media (width <= $size-sm) {
+				margin-right: 0;
+				width: auto;
+				padding: 15px 15px 5px 15px;
+			}
+
+		}
+
+	}
+
+}
+
+.gvschemes__s {
+	display: grid;
+	grid-template-columns: repeat(8, minmax(80px, 140px));
+	grid-template-rows: auto;
+	gap: clamp(10px, calc((100vw - 1400px) * 0.1), 40px);
+	justify-content: center;
+	align-content: center;
+	max-height: min-content;
+	margin: 20px;
+
+	@media (width <= $size-md) {
+		grid-template-columns: repeat(6, minmax(80px, 140px));
+		margin: 15px;
+
+		.xl--hidden {
+			display: none;
+		}
+
+	}
+
+	@media (width <= $size-sm) {
+		grid-template-columns: repeat(4, minmax(80px, 140px));
+
+		.xl--hidden {
+			display: block;
+		}
+
+	}
+
+	> div {
+		width: 100%;
+		aspect-ratio: 1;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

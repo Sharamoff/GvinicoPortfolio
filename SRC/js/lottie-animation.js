@@ -18,5 +18,11 @@ const animations = {
 		loop: true,
 		canvas: document.querySelector('#hdr-map-lottie'),
 		src: "animation/hdr-map.lottie"
+	}),
+	'hdr-schemes-lottie': new DotLottie({
+		autoplay: true,
+		loop: true,
+		canvas: document.querySelector('#hdr-schemes-lottie'),
+		src: "animation/hdr-schemes.lottie"
 	})
 };
