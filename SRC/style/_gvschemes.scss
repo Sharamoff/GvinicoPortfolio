@@ -8,6 +8,34 @@
 	height: 100%;
 }
 
+.gvschemes__q {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(20px, calc((100vw - 1400px) * 0.1), 40px);
+	margin: 40px 15px;
+
+	@media (width <= $size-sm) {
+		margin: 15px;
+	}
+
+	@media (height <= $size-sm) {
+		margin: 15px;
+	}
+
+	img {
+		width: 100%;
+		max-width: 1000px;
+		height: auto;
+
+		@media (height <= $size-sm) {
+			max-width: 500px;
+		}
+
+	}
+
+}
+
 .gvschemes__c {
 	display: flex;
 	justify-content: space-between;
@@ -91,6 +119,10 @@
 
 }
 
+
+.gvschemes__s {
+	display: none;
+}
 
 
 

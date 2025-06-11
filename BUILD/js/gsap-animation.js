@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ".gvschemes__c .td--problem",
     ".gvschemes__c .td--solution",
+    ".gvschemes__q",
     ".gvschemes__s img",
     
   ], {
@@ -253,39 +254,75 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 3,
       pin: true,
       pinSpacing: true,
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
     }
   });
 
+  gsap.set(".gvschemes__s", { display: "none" });
+
+
+// Анимация заголовков
   TL_Schemes.to(".gvschemes__c .td--problem", {
     x: 0,
     opacity: 1,
     duration: 1,
     ease: "power2.out"
   });
-
+  
   TL_Schemes.to(".gvschemes__c .td--solution", {
     x: 0,
     opacity: 1,
     duration: 1,
     ease: "power2.out"
   }, "-=0.5");
-  
-  gsap.utils.toArray('.gvschemes__s img').forEach((img, index) => {
-    gsap.set(img, {
-      opacity: 0,
-      y: 100
-    });
 
+// Показываем первый блок
+  TL_Schemes.to(".gvschemes__q", {
+    opacity: 1,
+    display: "flex",
+    duration: 1,
+    ease: "power2.out"
+  }, "-=0.5");
+
+// Переключение между блоками
+  TL_Schemes.to(".gvschemes__q", {
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out",
+    onComplete: function() {
+      gsap.set(".gvschemes__q", { display: "none" });
+      gsap.set(".gvschemes__s", { display: "grid" });
+    },
+    onReverseComplete: function() {
+      gsap.set(".gvschemes__s", { display: "none" });
+      gsap.set(".gvschemes__q", { display: "flex" });
+    }
+  }, "+=1");
+
+// Анимация второго блока
+  TL_Schemes.to(".gvschemes__s", {
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out"
+  });
+
+// Анимируем картинки во втором блоке
+  gsap.utils.toArray('.gvschemes__s img').forEach((img, index) => {
     TL_Schemes.to(img, {
       opacity: 1,
       y: 0,
-      duration: 1,
-      ease: "power2.out",
-    }, index * 0.2);
+      duration: 0.5,
+      ease: "power2.out"
+    }, `>-0.4`);
   });
- 
 
+  
+  
+  
+  
+  
+  
+  
   // end Schemes
 
   
