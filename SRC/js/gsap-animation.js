@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".gvschemes__c .td--problem",
     ".gvschemes__c .td--solution",
     ".gvschemes__q",
+    ".gvschemes__q img",
+    ".gvschemes__s",
     ".gvschemes__s img",
     
   ], {
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   gsap.set(".gvschemes__c .td--problem", { x: -150 });
   gsap.set(".gvschemes__c .td--solution", { x: 150 });
+  gsap.set(".gvschemes__q img", { y: 100 });
   gsap.set(".gvschemes__s img", { y: 100 });
   
 
@@ -245,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // Schemes
-  
+
   const TL_Schemes = gsap.timeline({
     scrollTrigger: {
       trigger: "#gvschemes",
@@ -258,10 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  gsap.set(".gvschemes__s", { display: "none" });
-
-
-// Анимация заголовков
   TL_Schemes.to(".gvschemes__c .td--problem", {
     x: 0,
     opacity: 1,
@@ -276,53 +275,46 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out"
   }, "-=0.5");
 
-// Показываем первый блок
   TL_Schemes.to(".gvschemes__q", {
+    y: 0,
     opacity: 1,
-    display: "flex",
     duration: 1,
     ease: "power2.out"
-  }, "-=0.5");
-
-// Переключение между блоками
+  },"-=0.5" );
+  
+  gsap.utils.toArray('.gvschemes__q img').forEach((img,  index) => {
+    TL_Schemes.to(img, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    }, `>-0.1`);
+  });
+  
+  TL_Schemes.to({}, { duration: 3 });
+  
   TL_Schemes.to(".gvschemes__q", {
     opacity: 0,
-    duration: 0.5,
-    ease: "power2.out",
-    onComplete: function() {
-      gsap.set(".gvschemes__q", { display: "none" });
-      gsap.set(".gvschemes__s", { display: "grid" });
-    },
-    onReverseComplete: function() {
-      gsap.set(".gvschemes__s", { display: "none" });
-      gsap.set(".gvschemes__q", { display: "flex" });
-    }
+    duration: 1,
+    ease: "power2.out"
   }, "+=1");
-
-// Анимация второго блока
+  
+  
   TL_Schemes.to(".gvschemes__s", {
     opacity: 1,
     duration: 0.5,
     ease: "power2.out"
   });
 
-// Анимируем картинки во втором блоке
   gsap.utils.toArray('.gvschemes__s img').forEach((img, index) => {
     TL_Schemes.to(img, {
       opacity: 1,
       y: 0,
       duration: 0.5,
       ease: "power2.out"
-    }, `>-0.4`);
+    }, `>-0.1`);
   });
 
-  
-  
-  
-  
-  
-  
-  
   // end Schemes
 
   
