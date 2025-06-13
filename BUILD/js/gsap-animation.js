@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ".gvschemes__c .td--problem",
     ".gvschemes__c .td--solution",
-    ".gvschemes__q",
+    //".gvschemes__q",
     ".gvschemes__q img",
-    ".gvschemes__s",
+    //".gvschemes__s",
     ".gvschemes__s img",
     
   ], {
@@ -274,31 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1,
     ease: "power2.out"
   }, "-=0.5");
-
-  TL_Schemes.to(".gvschemes__q", {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "power2.out"
-  },"-=0.5" );
-  
-  gsap.utils.toArray('.gvschemes__q img').forEach((img,  index) => {
-    TL_Schemes.to(img, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out"
-    }, `>-0.1`);
-  });
-  
-  TL_Schemes.to({}, { duration: 3 });
-  
-  TL_Schemes.to(".gvschemes__q", {
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out"
-  }, "+=1");
-  
   
   TL_Schemes.to(".gvschemes__s", {
     opacity: 1,
@@ -314,10 +289,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out"
     }, `>-0.1`);
   });
-
+  
+  TL_Schemes.to({}, { duration: 10 });
+  
   // end Schemes
 
-  
   
   
 });

@@ -48,51 +48,7 @@
 
 }
 
-
-.gvschemes-qs {
-	position: relative;
-	margin: 40px 15px;
-
-	@media (width <= $size-sm) {
-		margin: 15px;
-	}
-
-	@media (height <= $size-sm) {
-		margin: 15px;
-	}
-
-}
-
-
-.gvschemes__q {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: clamp(20px, calc((100vw - 1400px) * 0.1), 40px);
-	transition: 0.5s ease-in-out;
-
-	img {
-		width: 100%;
-		max-width: 1000px;
-		height: auto;
-
-		@media (height <= $size-sm) {
-			max-width: 500px;
-		}
-
-	}
-
-}
-
 .gvschemes__s {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(8, minmax(80px, 140px));
 	grid-template-rows: auto;
@@ -100,6 +56,7 @@
 	justify-content: center;
 	align-content: center;
 	max-height: min-content;
+	padding: 20px 15px;
 
 	@media (width <= $size-md) {
 		grid-template-columns: repeat(6, minmax(80px, 140px));
@@ -112,11 +69,16 @@
 
 	@media (width <= $size-sm) {
 		grid-template-columns: repeat(4, minmax(80px, 140px));
+		padding: 15px;
 
 		.xl--hidden {
 			display: block;
 		}
 
+	}
+
+	@media (height <= $size-sm) {
+		padding: 15px;
 	}
 
 	> div {
@@ -132,8 +94,6 @@
 	}
 
 }
-
-
 
 
 
