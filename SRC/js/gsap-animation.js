@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ".gvschemes__c .td--problem",
     ".gvschemes__c .td--solution",
-    //".gvschemes__q",
-    ".gvschemes__q img",
-    //".gvschemes__s",
+    ".gvschemes__s",
     ".gvschemes__s img",
     
   ], {
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
   gsap.set(".gvschemes__c .td--problem", { x: -150 });
   gsap.set(".gvschemes__c .td--solution", { x: 150 });
-  gsap.set(".gvschemes__q img", { y: 100 });
   gsap.set(".gvschemes__s img", { y: 100 });
   
 
