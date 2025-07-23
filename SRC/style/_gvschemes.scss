@@ -52,7 +52,7 @@
 	display: grid;
 	grid-template-columns: repeat(8, minmax(80px, 140px));
 	grid-template-rows: auto;
-	gap: clamp(10px, calc((100vw - 1400px) * 0.1), 40px);
+	gap: clamp(10px, calc((100vw - 1400px) * 0.1), 30px);
 	justify-content: center;
 	align-content: center;
 	max-height: min-content;
