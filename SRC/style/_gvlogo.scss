@@ -1,12 +1,6 @@
 #gvlogo {
 	position: relative;
 	background: linear-gradient(to right, $c-gray 50%, $c-white 50%);
-
-
-	@media (width <= $size-sm) {
-		background: $c-white;
-	}
-
 }
 
 .content-gvlogo {
@@ -15,32 +9,22 @@
 	display: grid;
 	grid-auto-columns: 1fr;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto 0.8fr 1.2fr;
+	grid-template-rows: auto 0.7fr 1.3fr;
 	gap: 0;
 	grid-template-areas:
-    "gvlogo__logo gvlogo__logo"
+    "hdr-content hdr-content"
     "gvlogo__tl gvlogo__tr"
     "gvlogo__bl gvlogo__br";
 
 	@media (width <= $size-sm) {
-		display: block;
-		min-height: auto;
-	}
-
-}
-
-.gvlogo__logo {
-	grid-area: gvlogo__logo;
-	text-align: center;
-
-	@media (width <= $size-sm) {
-		margin-left: -21%;
-	}
-
-	svg {
-		max-width: 766px;
-		height: auto;
-		margin: 0 auto;
+		grid-template-columns: 1fr;
+		grid-template-rows: 100px auto;
+		grid-template-areas:
+    "hdr-content"
+    "gvlogo__tl"
+    "gvlogo__tr"
+    "gvlogo__bl"
+		"gvlogo__br";
 	}
 
 }
@@ -49,32 +33,12 @@
 	grid-area: gvlogo__tl;
 	background-color: $c-gray;
 	color: $c-white;
-
-	@media (width <= $size-sm) {
-		margin-top: -20px;
-		padding-top: 50px !important;
-		text-align: center;
-	}
-
-	@media (height <= $size-sm) {
-		padding-left: 10% !important;
-	}
-
 }
 
 .gvlogo__tr {
 	grid-area: gvlogo__tr;
 	background-color: $c-white;
 	color: $c-gray;
-
-	@media (width <= $size-sm) {
-		text-align: center;
-	}
-
-	@media (height <= $size-sm) {
-		padding-right: 10% !important;
-	}
-
 }
 
 .gvlogo__bl {
@@ -89,38 +53,6 @@
 	color: $c-white;
 }
 
-.gvlogo__tl,
-.gvlogo__tr {
-	padding: 20px 20%;
-
-	@media (width <= $size-sm) {
-		padding: 30px 15px;
-	}
-
-	h2 {
-		margin: 0 auto;
-		font-size: 1rem;
-		line-height: 1rem;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: normal;
-		color: $c-red;
-	}
-
-	p {
-		margin: 0.5rem auto;
-		line-height: 1.4;
-	}
-
-}
-
-.gvlogo__tl {
-	font-weight: 300;
-}
-
-.gvlogo__tr {
-	font-weight: 500;
-}
 
 .gvlogo__bl,
 .gvlogo__br {
@@ -135,20 +67,27 @@
 		height: auto;
 	}
 
-}
-
-.gvlogo__bl {
-
-	@media (width <= $size-sm) {
-		border-top: dotted 1px transparentize($c-gray-light, 0.5);
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+		padding: 10px 40px;
 	}
 
 }
 
+
+@media (width <= $size-sm) {
+
+	.gvlogo__bl {
+		background-color: $c-gray-lighter;
+	}
+
+}
+
+
+
 .gvlogo-biglogo	{
 	display: block;
 	position: absolute;
-	top: 53%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 300px;
@@ -167,6 +106,10 @@
 		display: none;
 	}
 
+	@media (height <= $size-sm) {
+		display: none;
+	}
+
 	img {
 		width: 100%;
 		height: auto;
@@ -177,9 +120,23 @@
 }
 
 
+.gvlogo-oldlogo {
+	width: 200px;
+	height: auto;
+	margin-top: 0.5rem;
+	opacity: 0.5;
+
+	@media (width <= $size-sm) {
+		width: 150px;
+	}
+
+}
 
 
 
-
-
+.gvlogo__bl img,
+.gvlogo__br img,
+.gvlogo-biglogo img {
+	opacity: 0;
+}
 

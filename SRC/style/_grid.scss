@@ -1,12 +1,11 @@
 BODY {
-	background-color: $color-bk;
-	color: $color-main;
-	min-height: 100dvh;
+    background-color: $color-bk;
+    color: $color-main;
+    min-height: 100dvh;
 
-	@media (width <= $size-sm) {
-		overflow: auto;
-	}
-
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        overflow-y: auto;
+    }
 }
 
 HTML {
@@ -15,35 +14,116 @@ HTML {
 }
 
 .container {
-	min-height: auto;
-	scroll-snap-type: y mandatory;
-	overflow: hidden;
+    min-height: auto;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-type: none;
+    }
 }
 
 .content {
-	position: relative;
-	scroll-snap-align: start;
+    position: relative;
+    scroll-snap-align: start;
+
+    @media (max-width: $size-sm), (max-height: $size-sm) {
+        scroll-snap-align: none;
+    }
+}
+
+
+a {
+	color: #6D6F71;
+	transition: all 0.5s;
+	text-decoration: none;
+
+	&:hover {
+		color: #1A1C1F;
+	}
+
+}
+
+
+.hdr-content {
+	grid-area: hdr-content;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+.hdr-animation {
+	width: 100%;
+	max-width: 766px;
+	height: auto;
+	margin: 0 auto;
+	aspect-ratio: 766 / 250;
+
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+		height: 100px;
+		width: auto;
+	}
+
 }
 
 
 
+.taskdesc {
+	padding: 20px 20%;
+
+	@media (width <= $size-sm) {
+		padding: 20px 15px;
+		text-align: center;
+	}
+
+	@media (height <= $size-sm) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	h2 {
+		margin: 0 auto;
+		font-size: 1rem;
+		line-height: 1rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: normal;
+		color: $c-red;
+	}
+
+	p {
+		margin: 0.5rem auto;
+		line-height: 1.4;
+		font-weight: 500;
+		text-wrap: pretty;
+	}
+
+}
 
 
+.i-scroll {
+	position: absolute;
+	z-index: 999;
+	width: 64px;
+	height: 94px;
+	left: 50%;
+	bottom: 50px;
+	transform: translateX(-50%);
+	background-image: url("../img/i-scroll.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
 
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		width: 44px;
+		height: 64px;
+		bottom: 20px;
+		background-image: url("../img/i-touch.svg");
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
