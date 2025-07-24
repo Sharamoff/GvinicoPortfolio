@@ -126,4 +126,8 @@ a {
 		background-image: url("../img/i-touch.svg");
 	}
 
+	@media (width <= $size-sm) {
+		display: none;
+	}
+
 }
