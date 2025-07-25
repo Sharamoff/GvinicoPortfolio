@@ -14,22 +14,12 @@ HTML {
 }
 
 .container {
-    min-height: auto;
-    scroll-snap-type: y mandatory;
-    overflow: hidden;
-
-    @media (max-width: $size-sm), (max-height: $size-sm) {
-        scroll-snap-type: none;
-    }
+  min-height: auto;
+  overflow: hidden;
 }
 
 .content {
-    position: relative;
-    scroll-snap-align: start;
-
-    @media (max-width: $size-sm), (max-height: $size-sm) {
-        scroll-snap-align: none;
-    }
+  position: relative;
 }
 
 

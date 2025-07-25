@@ -1,7 +1,5 @@
 #gvcomingsoon {
 	background: transparentize($c-gray-lighter, 0.33);
-	min-height: 100dvh;
-	height: 100%;
 
 	&:before {
 		content: "";
