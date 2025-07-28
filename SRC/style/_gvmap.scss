@@ -46,7 +46,7 @@
 
 		&.td--problem {
 			left: 10%;
-			top: 40px;
+			top: 20px;
 			width: clamp(200px, 40vw, 600px);
 
 			@media (width <= $size-sm) {
@@ -60,7 +60,7 @@
 
 		&.td--solution {
 			right: 10%;
-			top: 40px;
+			top: 20px;
 			width: clamp(200px, 30vw, 600px);
 
 			@media (width <= $size-sm) {

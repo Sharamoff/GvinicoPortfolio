@@ -245,6 +245,35 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // end Schemes
     
+    
+    
+    // Socialmedia
+    
+    const TL_Socialmedia = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#gvsocialmedia",
+        start: "top top",
+        end: "+=100%",
+        scrub: 3,
+        pin: true,
+        pinSpacing: true,
+        toggleActions: "play none none reverse"
+      }
+    });
+    
+    TL_Socialmedia.to(".gvsocialmedia__s", {
+      y: 0,
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out"
+    });
+    
+    // end Socialmedia
+    
+    
+    
+    
+    
   });
   
   
