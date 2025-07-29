@@ -13,14 +13,50 @@
     "hdr-content hdr-content"
     "gvsocialmedia__tl gvsocialmedia__tr"
     "gvsocialmedia__c gvsocialmedia__c";
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+    "hdr-content"
+    "gvsocialmedia__tl"
+    "gvsocialmedia__tr"
+    "gvsocialmedia__c";
+	}
+
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		min-height: auto;
+	}
+
 }
 
 .gvsocialmedia__tl {
 	grid-area: gvsocialmedia__tl;
+	min-height: 120px;
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+	}
+
+	.td--problem {
+		padding-bottom: 0;
+	}
+
 }
 
 .gvsocialmedia__tr {
 	grid-area: gvsocialmedia__tr;
+	min-height: 120px;
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+	}
+
+	.td--solution {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
 }
 
 .gvsocialmedia__c {
@@ -33,9 +69,14 @@
 	background: url("../img/sm-bk.webp") 50% top no-repeat;
 	background-size: 764px auto;
 
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		min-height: 704px;
+	}
+
 	@media (width <= $size-sm) {
 		display: block;
-		background-size: 400px auto;
+		background-size: 600px auto;
+		min-height: 557px;
 	}
 
 	img {
@@ -60,7 +101,8 @@
 		border-radius: 6px;
 
 		@media (width <= $size-sm) {
-			width: 53%;
+			margin-top: 42px;
+			width: 210px;
 		}
 
 	}
