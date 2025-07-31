@@ -1,0 +1,238 @@
+Сделай карусель на такой основе
+
+HTML:
+    <section class="content" id="gvsocialmedia">
+		<div class="content-gvsocialmedia">
+			<div class="gvsocialmedia__c">
+				<div class="socialmedia-animation">
+					<div class="sa sa--lll"><img src="img/sm21.webp" alt=""></div>
+					<div class="sa sa--ll"><img src="img/sm22.webp" alt=""></div>
+					<div class="sa sa--l"><img src="img/sm23.webp" alt=""></div>
+					<div class="sa sa--active"><img src="img/sm01.webp" alt=""></div>
+					<div class="sa sa--l"><img src="img/sm02.webp" alt=""></div>
+					<div class="sa sa--ll"><img src="img/sm03.webp" alt=""></div>
+					<div class="sa sa--lll"><img src="img/sm04.webp" alt=""></div>
+					<!--
+					<div class="sa"><img src="img/sm05.webp" alt=""></div>
+					<div class="sa"><img src="img/sm06.webp" alt=""></div>
+					<div class="sa"><img src="img/sm07.webp" alt=""></div>
+					<div class="sa"><img src="img/sm08.webp" alt=""></div>
+					<div class="sa"><img src="img/sm09.webp" alt=""></div>
+					<div class="sa"><img src="img/sm10.webp" alt=""></div>
+					<div class="sa"><img src="img/sm11.webp" alt=""></div>
+					<div class="sa"><img src="img/sm12.webp" alt=""></div>
+					<div class="sa"><img src="img/sm13.webp" alt=""></div>
+					<div class="sa"><img src="img/sm14.webp" alt=""></div>
+					<div class="sa"><img src="img/sm15.webp" alt=""></div>
+					<div class="sa"><img src="img/sm16.webp" alt=""></div>
+					<div class="sa"><img src="img/sm17.webp" alt=""></div>
+					<div class="sa"><img src="img/sm18.webp" alt=""></div>
+					<div class="sa"><img src="img/sm19.webp" alt=""></div>
+					<div class="sa"><img src="img/sm20.webp" alt=""></div>
+					-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+SCSS:
+#gvsocialmedia {
+	position: relative;
+	background-color: $c-gray-lighter;
+}
+
+.content-gvsocialmedia {
+	min-height: 100dvh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, min-content) 1fr;
+	gap: 0;
+	grid-template-areas:
+    "hdr-content hdr-content"
+    "gvsocialmedia__tl gvsocialmedia__tr"
+    "gvsocialmedia__c gvsocialmedia__c";
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+    "hdr-content"
+    "gvsocialmedia__tl"
+    "gvsocialmedia__tr"
+    "gvsocialmedia__c";
+	}
+
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		min-height: auto;
+	}
+}
+
+.gvsocialmedia__tl {
+	grid-area: gvsocialmedia__tl;
+	min-height: 120px;
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+	}
+
+	.td--problem {
+		padding-bottom: 0;
+	}
+}
+
+.gvsocialmedia__tr {
+	grid-area: gvsocialmedia__tr;
+	min-height: 120px;
+
+	@media (width <= $size-sm) {
+		min-height: auto;
+	}
+
+	.td--solution {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+.gvsocialmedia__c {
+	grid-area: gvsocialmedia__c;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	background: url("../img/sm-bk.webp") 50% top no-repeat;
+	background-size: 764px auto;
+
+	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+		min-height: 704px;
+	}
+
+	@media (width <= $size-sm) {
+		display: block;
+		background-size: 600px auto;
+		min-height: 557px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.socialmedia-animation {
+	display: flex;
+	justify-content: center;
+	gap: 0 40px;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	min-height: 400px;
+}
+
+.sa {
+	margin-top: 54px;
+	transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	display: none; // Только для работы карусели - скрываем неактивные слайды
+
+	@media (width <= $size-sm) {
+		margin-top: 42px;
+	}
+
+	img {
+		width: 268px;
+		height: auto;
+		border-radius: 6px;
+		transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+		@media (width <= $size-sm) {
+			width: 210px;
+		}
+	}
+
+	&.sa--active {
+		//display: block !important;
+		//padding-left: 60px;
+		//padding-right: 60px;
+		z-index: 10;
+	}
+
+	&.sa--l {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		opacity: 0.75;
+		z-index: 5;
+	}
+
+	&.sa--ll {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		opacity: 0.5;
+		z-index: 3;
+	}
+
+	&.sa--lll {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		opacity: 0.3;
+		z-index: 1;
+	}
+}
+
+GSAP с использованием ScrollTrigger.
+
+2. Не меняй структуру блока <div class="socialmedia-animation">...</div>.
+
+3. Не меняй визуальные стили внутри карусели и ее элементов, но если нужно добавь стили для правильной работы карусели.
+
+4. Слайды карусели есть картинки от img/sm01.webp до img/sm23.webp, обернутые в блоки sa.
+
+5. Всего 29 слайдов вот в таком массиве и в таком порядке:
+const slidesData = [
+        { src: 'img/sm21.webp', alt: '' },
+        { src: 'img/sm22.webp', alt: '' },
+        { src: 'img/sm23.webp', alt: '' },
+        { src: 'img/sm01.webp', alt: '' },
+        { src: 'img/sm02.webp', alt: '' },
+        { src: 'img/sm03.webp', alt: '' },
+        { src: 'img/sm04.webp', alt: '' },
+        { src: 'img/sm05.webp', alt: '' },
+        { src: 'img/sm06.webp', alt: '' },
+        { src: 'img/sm07.webp', alt: '' },
+        { src: 'img/sm08.webp', alt: '' },
+        { src: 'img/sm09.webp', alt: '' },
+        { src: 'img/sm10.webp', alt: '' },
+        { src: 'img/sm11.webp', alt: '' },
+        { src: 'img/sm12.webp', alt: '' },
+        { src: 'img/sm13.webp', alt: '' },
+        { src: 'img/sm14.webp', alt: '' },
+        { src: 'img/sm15.webp', alt: '' },
+        { src: 'img/sm16.webp', alt: '' },
+        { src: 'img/sm17.webp', alt: '' },
+        { src: 'img/sm18.webp', alt: '' },
+        { src: 'img/sm19.webp', alt: '' },
+        { src: 'img/sm20.webp', alt: '' },
+        { src: 'img/sm21.webp', alt: '' },
+        { src: 'img/sm22.webp', alt: '' },
+        { src: 'img/sm23.webp', alt: '' },
+        { src: 'img/sm01.webp', alt: '' },
+        { src: 'img/sm02.webp', alt: '' },
+        { src: 'img/sm03.webp', alt: '' }
+      ];
+
+6. Показывается 7 слайдов. Блок sa--active всегда центральный. По краям от центрального в обе стороны блоки с добавочными к sa - sa--l, sa--ll, sa--lll.
+
+7. Прокрутка начинается с слайда 'img/sm01.webp' (4 с начала) с sa--active, заканчивается слайдом 'img/sm23.webp' (26 с начала) когда он становится с sa--active, проигрывается по ScrollTrigger в обе стороны.
+
+8. Визуально слайд с sa--active проявляется, остальные слайды прокручиваются. Прокрутка по одному слайду.
+
+9. Добавь автопрокрутку через каждые 3 сек только на мобильных устройствах. 
+
+10. Добавь touch-свайп для мобильных устройств.
+
+11. Пока прокручивается карусель, блок #gvsocialmedia не скроллится (по типу pin, start, end).
+
+12. Проанализируй код в gsap-animation.js и вставь код карусели между комментариями // Socialmedia Carousel...// end Socialmedia Carousel.
+
