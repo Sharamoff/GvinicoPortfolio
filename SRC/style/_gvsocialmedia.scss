@@ -27,6 +27,7 @@
 	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
 		min-height: auto;
 	}
+
 }
 
 .gvsocialmedia__tl {
@@ -70,7 +71,7 @@
 		min-height: 704px;
 	}
 
-	@media (width <= $size-sm) {
+	@media (max-width: $size-sm), (max-height: $size-sm) {
 		display: block;
 		background-size: 600px auto;
 		min-height: 557px;
@@ -98,7 +99,7 @@
 	margin-top: 54px;
 	display: none;
 
-	@media (width <= $size-sm) {
+	@media (max-width: $size-sm), (max-height: $size-sm) {
 		margin-top: 42px;
 	}
 
@@ -107,7 +108,7 @@
 		height: auto;
 		border-radius: 6px;
 
-		@media (width <= $size-sm) {
+		@media (max-width: $size-sm), (max-height: $size-sm) {
 			width: 210px;
 		}
 	}

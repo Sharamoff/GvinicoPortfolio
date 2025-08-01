@@ -244,124 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     TL_Schemes.to({}, { duration: 10 });
     
     // end Schemes
-
-    
-    
-    // Socialmedia Carousel
-    
-    const slidesData = [
-      { src: 'img/sm21.webp', alt: '' },
-      { src: 'img/sm22.webp', alt: '' },
-      { src: 'img/sm23.webp', alt: '' },
-      { src: 'img/sm01.webp', alt: '' },
-      { src: 'img/sm02.webp', alt: '' },
-      { src: 'img/sm03.webp', alt: '' },
-      { src: 'img/sm04.webp', alt: '' },
-      { src: 'img/sm05.webp', alt: '' },
-      { src: 'img/sm06.webp', alt: '' },
-      { src: 'img/sm07.webp', alt: '' },
-      { src: 'img/sm08.webp', alt: '' },
-      { src: 'img/sm09.webp', alt: '' },
-      { src: 'img/sm10.webp', alt: '' },
-      { src: 'img/sm11.webp', alt: '' },
-      { src: 'img/sm12.webp', alt: '' },
-      { src: 'img/sm13.webp', alt: '' },
-      { src: 'img/sm14.webp', alt: '' },
-      { src: 'img/sm15.webp', alt: '' },
-      { src: 'img/sm16.webp', alt: '' },
-      { src: 'img/sm17.webp', alt: '' },
-      { src: 'img/sm18.webp', alt: '' },
-      { src: 'img/sm19.webp', alt: '' },
-      { src: 'img/sm20.webp', alt: '' },
-      { src: 'img/sm21.webp', alt: '' },
-      { src: 'img/sm22.webp', alt: '' },
-      { src: 'img/sm23.webp', alt: '' },
-      { src: 'img/sm01.webp', alt: '' },
-      { src: 'img/sm02.webp', alt: '' },
-      { src: 'img/sm03.webp', alt: '' },
-    ];
-    
-    const carouselContainer = document.querySelector('.socialmedia-animation');
-    const saElements = carouselContainer.querySelectorAll('.sa');
-    
-    let currentIndex = 3;
-    
-    function updateClasses() {
-      saElements.forEach((el, i) => el.className = 'sa');
-      saElements[currentIndex].classList.add('sa--active');
-      if (saElements[currentIndex - 1]) saElements[currentIndex - 1].classList.add('sa--l');
-      if (saElements[currentIndex - 2]) saElements[currentIndex - 2].classList.add('sa--ll');
-      if (saElements[currentIndex - 3]) saElements[currentIndex - 3].classList.add('sa--lll');
-      if (saElements[currentIndex + 1]) saElements[currentIndex + 1].classList.add('sa--l');
-      if (saElements[currentIndex + 2]) saElements[currentIndex + 2].classList.add('sa--ll');
-      if (saElements[currentIndex + 3]) saElements[currentIndex + 3].classList.add('sa--lll');
-      saElements.forEach((el, i) => {
-        el.style.display = (Math.abs(i - currentIndex) <= 3) ? 'block' : 'none';
-      });
-    }
-    
-    function createScrollCarousel() {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#gvsocialmedia',
-          start: 'top top',
-          end: '+=5000',
-          scrub: 1,
-          pin: true,
-          pinSpacing: true,
-        }
-      });
-      
-      for (let i = 3; i <= 25; i++) {
-        tl.to({}, {
-          duration: 1.5,
-          onUpdate: () => {
-            currentIndex = i;
-            updateClasses();
-          }
-        });
-      }
-    }
-    
-    function enableMobileAutoplayAndSwipe() {
-      let interval;
-      
-      function autoAdvance() {
-        currentIndex = (currentIndex + 1) % saElements.length;
-        updateClasses();
-      }
-      
-      if (window.innerWidth <= 576) {
-        interval = setInterval(autoAdvance, 3000);
-        
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        carouselContainer.addEventListener('touchstart', e => {
-          touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        carouselContainer.addEventListener('touchend', e => {
-          touchEndX = e.changedTouches[0].screenX;
-          if (touchEndX < touchStartX - 30) {
-            currentIndex = Math.min(currentIndex + 1, saElements.length - 1);
-            updateClasses();
-          }
-          if (touchEndX > touchStartX + 30) {
-            currentIndex = Math.max(currentIndex - 1, 0);
-            updateClasses();
-          }
-        });
-      }
-    }
-    
-    updateClasses();
-    createScrollCarousel();
-    enableMobileAutoplayAndSwipe();
-    
-    // end Socialmedia Carousel
   
-    
     
   });
   
@@ -394,6 +277,129 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
   });
+  
+  
+  
+  // Socialmedia Carousel
+  
+  const slidesData = [
+    { src: 'img/sm21.webp', alt: '' },
+    { src: 'img/sm22.webp', alt: '' },
+    { src: 'img/sm23.webp', alt: '' },
+    { src: 'img/sm01.webp', alt: '' },
+    { src: 'img/sm02.webp', alt: '' },
+    { src: 'img/sm03.webp', alt: '' },
+    { src: 'img/sm04.webp', alt: '' },
+    { src: 'img/sm05.webp', alt: '' },
+    { src: 'img/sm06.webp', alt: '' },
+    { src: 'img/sm07.webp', alt: '' },
+    { src: 'img/sm08.webp', alt: '' },
+    { src: 'img/sm09.webp', alt: '' },
+    { src: 'img/sm10.webp', alt: '' },
+    { src: 'img/sm11.webp', alt: '' },
+    { src: 'img/sm12.webp', alt: '' },
+    { src: 'img/sm13.webp', alt: '' },
+    { src: 'img/sm14.webp', alt: '' },
+    { src: 'img/sm15.webp', alt: '' },
+    { src: 'img/sm16.webp', alt: '' },
+    { src: 'img/sm17.webp', alt: '' },
+    { src: 'img/sm18.webp', alt: '' },
+    { src: 'img/sm19.webp', alt: '' },
+    { src: 'img/sm20.webp', alt: '' },
+    { src: 'img/sm21.webp', alt: '' },
+    { src: 'img/sm22.webp', alt: '' },
+    { src: 'img/sm23.webp', alt: '' },
+    { src: 'img/sm01.webp', alt: '' },
+    { src: 'img/sm02.webp', alt: '' },
+    { src: 'img/sm03.webp', alt: '' },
+  ];
+  
+  const carouselContainer = document.querySelector('.socialmedia-animation');
+  const saElements = carouselContainer.querySelectorAll('.sa');
+  
+  let currentIndex = 3; // index of sm01.webp
+  let isMobile = window.innerWidth <= 576;
+  
+  function updateClasses() {
+    saElements.forEach((el, i) => el.className = 'sa');
+    
+    saElements[currentIndex].classList.add('sa--active');
+    
+    if (!isMobile) {
+      if (saElements[currentIndex - 1]) saElements[currentIndex - 1].classList.add('sa--l');
+      if (saElements[currentIndex - 2]) saElements[currentIndex - 2].classList.add('sa--ll');
+      if (saElements[currentIndex - 3]) saElements[currentIndex - 3].classList.add('sa--lll');
+      if (saElements[currentIndex + 1]) saElements[currentIndex + 1].classList.add('sa--l');
+      if (saElements[currentIndex + 2]) saElements[currentIndex + 2].classList.add('sa--ll');
+      if (saElements[currentIndex + 3]) saElements[currentIndex + 3].classList.add('sa--lll');
+    }
+    
+    saElements.forEach((el, i) => {
+      el.style.display = isMobile
+        ? (i === currentIndex ? 'block' : 'none')
+        : (Math.abs(i - currentIndex) <= 3 ? 'block' : 'none');
+    });
+  }
+  
+  function createScrollCarousel() {
+    if (isMobile) return;
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#gvsocialmedia',
+        start: 'top top',
+        end: '+=5000',
+        scrub: 2,
+        pin: true,
+      }
+    });
+    
+    for (let i = 3; i <= 25; i++) {
+      tl.to({}, {
+        duration: 1.5,
+        onUpdate: () => {
+          currentIndex = i;
+          updateClasses();
+        }
+      });
+    }
+  }
+  
+  function enableMobileTouchSwipe() {
+    if (!isMobile) return;
+    
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselContainer.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    carouselContainer.addEventListener('touchmove', e => {
+      touchEndX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    carouselContainer.addEventListener('touchend', () => {
+      const threshold = 30;
+      const deltaX = touchEndX - touchStartX;
+      
+      if (Math.abs(deltaX) > threshold) {
+        if (deltaX < 0) {
+          currentIndex = (currentIndex + 1) % saElements.length;
+        } else if (deltaX > 0) {
+          currentIndex = (currentIndex - 1 + saElements.length) % saElements.length;
+        }
+        updateClasses();
+      }
+    });
+  }
+  
+  updateClasses();
+  createScrollCarousel();
+  enableMobileTouchSwipe();
+  
+  // end Socialmedia Carousel
+  
   
   
 });
