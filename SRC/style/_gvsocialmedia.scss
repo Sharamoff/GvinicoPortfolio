@@ -141,4 +141,34 @@
 		opacity: 0.2;
 		z-index: 1;
 	}
+
 }
+
+
+
+@media (max-width: $size-sm), (max-height: $size-sm) {
+
+	.tscroll {
+		position: absolute;
+		z-index: 99;
+		top: 38%;
+		height: 35px;
+		width: 87px;
+		opacity: 0.66;
+
+		&.tscroll--right {
+			right: 5px;
+			background-image: url("../img/i-tscroll-r.svg");
+			background-size: cover;
+		}
+
+		&.tscroll--left {
+			left: 5px;
+			background-image: url("../img/i-tscroll-l.svg");
+			background-size: cover;
+		}
+
+	}
+
+}
+
