@@ -25,4 +25,11 @@ const animations = {
 		canvas: document.querySelector('#hdr-schemes-lottie'),
 		src: "animation/hdr-schemes.lottie"
 	})
+	,
+	'hdr-socialmedia-lottie': new DotLottie({
+		autoplay: true,
+		loop: true,
+		canvas: document.querySelector('#hdr-socialmedia-lottie'),
+		src: "animation/hdr-socialmedia.lottie"
+	})
 };
