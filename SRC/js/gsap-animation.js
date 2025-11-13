@@ -400,6 +400,37 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // end Socialmedia Carousel
   
+	
+	
+	// Lenis Scroll
+	
+	const lenis = new Lenis({
+		duration: 1.5,
+		easing: (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t),
+		smooth: true,
+		direction: 'vertical',
+	});
+	
+	lenis.on('scroll', ScrollTrigger.update);
+	
+	gsap.ticker.add((time) => {
+		lenis.raf(time * 1000);
+	});
+
+
+	ScrollTrigger.scrollerProxy(document.body, {
+		scrollTop(value) {
+			return arguments.length ? lenis.scrollTo(value) : lenis.scroll;
+		},
+		getBoundingClientRect() {
+			return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+		},
+		pinType: 'transform'
+	});
+	
+	ScrollTrigger.refresh();
+	
+	// end Lenis Scroll
   
   
 });
