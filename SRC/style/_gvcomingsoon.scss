@@ -33,17 +33,12 @@
 	}
 
 	.commingsoon__cs {
-		font: 500 70px/1 $font-family-big;
+		font: 500 40px/1 $font-family-big;
 		color: $c-gray-light;
 		text-align: center;
 		text-transform: uppercase;
 		margin: 40px auto;
 		opacity: 0.5;
-
-		@media (width <= $size-sm) {
-			font-size: 46px;
-		}
-
 	}
 
 	.commingsoon__gvlink {
