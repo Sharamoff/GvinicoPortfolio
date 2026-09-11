@@ -1,0 +1,14 @@
+<svg width="19" height="70" viewBox="0 0 19 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path id="arrow" d="M9.5 2V52M2 42L9.5 52L17 42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<animateTransform
+    xlink:href="#arrow"
+    attributeName="transform"
+    type="translate"
+    additive="sum"
+    repeatCount="indefinite"
+    dur="4s"
+    values="0 0;0 15;0 0;0 15;0 0;0 0"
+    keyTimes="0;0.0625;0.125;0.1875;0.25;1"
+    keySplines="0.7 0 1 1;0 0 0.3 1;0.7 0 1 1;0 0 0.3 1;0 0 1 1"
+    calcMode="spline"/>
+</svg>
