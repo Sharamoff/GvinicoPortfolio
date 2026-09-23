@@ -1,0 +1,87 @@
+#gvcom {
+	background-color: $c-red;
+	color: $c-white;
+}
+
+.content-gvcom {
+	display: grid;
+	grid-template-columns: 200px minmax(0, 1fr);
+	gap: 30px;
+	align-items: start;
+	align-content: center;
+	width: calc(100% - 60px);
+	max-width: 1210px;
+	height: 100dvh;
+	margin: 0 auto;
+	padding: 60px 0;
+
+	@media (max-width: $size-md) {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		gap: 12px;
+		width: calc(100% - 30px);
+		height: auto;
+		min-height: 100dvh;
+	}
+
+}
+
+.gvcom__logo {
+	width: 200px;
+	max-width: 200px;
+	margin-top: -65px;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	@media (max-width: $size-md) {
+		width: 160px;
+		max-width: 160px;
+		align-content: center;
+		margin-top: 0;
+	}
+
+}
+
+.gvcom__content {
+	width: 100%;
+	min-width: 0;
+	font-weight: 400;
+	text-wrap: pretty;
+	line-height: 1.4;
+
+	@media (max-width: $size-md) {
+		text-align: center;
+	}
+
+	h2 {
+		margin: 0 0 18px;
+		font: 50px $font-family-big;
+		color: $c-white;
+
+		@media (max-width: $size-md) {
+			margin: 0 0 -4px;
+			font-size: 42px;
+		}
+
+	}
+
+}
+
+.gvcom__link {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	text-decoration: none;
+	color: $c-red;
+	background-color: $c-white !important;
+	padding: 3px 10px;
+	border-radius: 3px;
+	font: 24px / 1 $font-family-big;
+	margin: 0 3px;
+}

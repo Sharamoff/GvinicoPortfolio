@@ -1,16 +1,20 @@
 BODY {
-    background-color: $color-bk;
-    color: $color-main;
-    min-height: 100dvh;
+	background-color: $color-bk;
+	color: $color-main;
+	min-height: 100dvh;
 
-    @media (max-width: $size-sm), (max-height: $size-sm) {
-        overflow-y: auto;
-    }
+	@media (max-width: $size-sm), (max-height: $size-sm) {
+	    overflow-y: auto;
+	}
 }
 
 HTML {
 	height: 100%;
 	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 .container {
@@ -20,6 +24,7 @@ HTML {
 
 .content {
   position: relative;
+	min-height: 100dvh;
 }
 
 
@@ -100,19 +105,17 @@ a {
 .i-scroll {
 	position: absolute;
 	z-index: 999;
-	width: 64px;
-	height: 94px;
+	width: 44px;
+	height: 64px;
 	left: 50%;
-	bottom: 50px;
+	bottom: 0;
 	transform: translateX(-50%);
 	background-image: url("../img/i-scroll.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
+	opacity: 0.9;
 
 	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-		width: 44px;
-		height: 64px;
-		bottom: 20px;
 		background-image: url("../img/i-touch.svg");
 	}
 
@@ -121,3 +124,39 @@ a {
 	}
 
 }
+
+.darr-scroll--first, .darr-scroll--sec {
+	position: absolute;
+	z-index: 999;
+	width: 200px;
+	max-height: 160px;
+	left: calc(50% - 100px);
+	bottom: 0;
+	text-align: center;
+
+	@media (width <= $size-sm) {
+		img {
+			height: 50px;
+			width: auto;
+		}
+	}
+
+	span {
+		display: block;
+		text-align: center;
+		margin-bottom: 40px;
+		color: $c-red;
+		font-family: $font-family-big;
+		font-size: 40px;
+		line-height: 1;
+		text-transform: uppercase;
+
+		@media (width <= $size-sm) {
+			margin-bottom: 20px;
+			font-size: 32px;
+		}
+
+	}
+
+}
+

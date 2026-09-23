@@ -30,6 +30,11 @@
 		height: auto;
 		margin-bottom: 20px;
 		opacity: 0.5;
+
+		@media (max-width: $size-md) {
+			width: 164px;
+		}
+
 	}
 
 	.commingsoon__cs {
@@ -39,6 +44,11 @@
 		text-transform: uppercase;
 		margin: 40px auto;
 		opacity: 0.5;
+
+		@media (max-width: $size-md) {
+			margin: 10px auto;
+		}
+
 	}
 
 	.commingsoon__gvlink {

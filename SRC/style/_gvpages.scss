@@ -1,0 +1,29 @@
+#gvpages{
+	background-color: #D2B579;
+}
+
+.content-gvpages {
+	display: grid;
+	grid-template-columns: 200px minmax(0, 1fr);
+	column-gap: 20px;
+	align-items: start;
+	align-content: start;
+	width: calc(100% - 60px);
+	max-width: 1210px;
+	height: 100dvh;
+	margin: 0 auto;
+	padding: 60px 0;
+
+	@media (max-width: $size-sm) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 20px;
+		width: calc(100% - 30px);
+		height: auto;
+		min-height: 100dvh;
+		margin: 0 auto;
+		padding: 60px 0 100px;
+	}
+}
+
