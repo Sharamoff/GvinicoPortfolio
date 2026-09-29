@@ -430,6 +430,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================================
+    // GVPAGES
+    // ========================================================
+
+    const TL_Gvpages = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#gvpages",
+        start: "top top",
+        end: "+=500",
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    });
+
+
+
+    // ========================================================
     // END OF DESKTOP
     // ========================================================
 

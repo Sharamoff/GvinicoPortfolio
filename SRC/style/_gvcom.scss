@@ -79,9 +79,15 @@
 	top: 3px;
 	text-decoration: none;
 	color: $c-red;
-	background-color: $c-white !important;
+	background-color: $c-white;
 	padding: 3px 10px;
 	border-radius: 3px;
 	font: 24px / 1 $font-family-big;
 	margin: 0 3px;
+
+	&:hover {
+		background-color: $c-gray;
+		color: $c-white;
+	}
+
 }
