@@ -99,6 +99,7 @@
 		border: solid 1px #C7A358;
 		aspect-ratio: 250 / 300;
 		overflow: hidden;
+		cursor: pointer;
 
 		@media (max-width: $size-md) {
 			width: 48%;
