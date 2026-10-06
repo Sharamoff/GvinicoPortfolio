@@ -3,7 +3,7 @@ BODY {
 	color: $color-main;
 	min-height: 100dvh;
 
-	@media (max-width: $size-sm), (max-height: $size-sm) {
+	@media (width <= $size-sm), (height <= $size-sm) {
 	    overflow-y: auto;
 	}
 }
@@ -60,7 +60,7 @@ a {
 	margin: 0 auto;
 	aspect-ratio: 766 / 250;
 
-	@media (max-width: $size-sm), (max-height: $size-sm) {
+	@media (width <= $size-sm), (height <= $size-sm) {
 		height: 100px;
 		width: auto;
 	}
@@ -70,26 +70,31 @@ a {
 
 
 .taskdesc {
-	padding: 20px 20%;
+	padding: 10px 20%;
 
 	@media (width <= $size-sm) {
-		padding: 20px 15px;
+		padding: 20px 15px 0 15px;
 		text-align: center;
 	}
 
 	@media (height <= $size-sm) {
-		padding-left: 30px;
-		padding-right: 30px;
+		padding: 15px 30px;
 	}
 
 	h2 {
-		margin: 0 auto;
-		font-size: 1rem;
-		line-height: 1rem;
-		font-weight: 900;
+		margin: 0 auto 10px auto;
+		font-size: 1.8rem;
+		line-height: 1;
+		font-weight: normal;
+		font-family: $font-family-big;
 		text-transform: uppercase;
 		letter-spacing: normal;
 		color: $c-red;
+
+		@media (width <= $size-sm), (height <= $size-sm) {
+			margin-bottom: 5px;
+		}
+
 	}
 
 	p {
@@ -97,6 +102,11 @@ a {
 		line-height: 1.4;
 		font-weight: 500;
 		text-wrap: pretty;
+
+		@media (width <= $size-sm), (height <= $size-sm) {
+			line-height: 1.2;
+		}
+
 	}
 
 }

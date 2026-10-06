@@ -52,7 +52,7 @@
 	}
 
 	.td--solution {
-		padding-top: 15px;
+		padding-top: 10px;
 		padding-bottom: 15px;
 	}
 }
@@ -71,7 +71,7 @@
 		min-height: 704px;
 	}
 
-	@media (max-width: $size-sm), (max-height: $size-sm) {
+	@media (width <= $size-sm), (height <= $size-sm) {
 		display: block;
 		background-size: 600px auto;
 		min-height: 557px;
@@ -100,7 +100,7 @@
 	margin-top: 54px;
 	display: none;
 
-	@media (max-width: $size-sm), (max-height: $size-sm) {
+	@media (width <= $size-sm), (height <= $size-sm) {
 		margin-top: 42px;
 	}
 
@@ -109,7 +109,7 @@
 		height: auto;
 		border-radius: 6px;
 
-		@media (max-width: $size-sm), (max-height: $size-sm) {
+		@media (width <= $size-sm), (height <= $size-sm) {
 			width: 210px;
 		}
 	}
@@ -147,7 +147,7 @@
 
 
 
-@media (max-width: $size-sm), (max-height: $size-sm) {
+@media (width <= $size-sm), (height <= $size-sm) {
 
 	.tscroll {
 		position: absolute;

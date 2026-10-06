@@ -149,11 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
         anticipatePin: 1
       }
     });
+    TL_Illustration.to({}, {
+      duration: 1
+    });
     TL_Illustration.to(".gvillustration__l .g1", {
       y: 0,
       opacity: 1,
       duration: 1
-    })
+    }, "+=0.5")
     TL_Illustration.to(".gvillustration__l .g2-l", {
       y: 0,
       opacity: 1,
@@ -195,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 3
       }, "+=1");
     TL_Illustration.to({}, {
-      duration: 3
+      duration: 2
     });
 
 
@@ -234,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#gvschemes",
         start: "top top",
-        end: () => "+=" + window.innerHeight * 3,
+        end: () => "+=" + window.innerHeight * 5,
         pin: true,
         pinSpacing: true,
         scrub: 3,
@@ -246,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       opacity: 1,
       duration: 0.5,
       ease: "power2.out"
-    });
+    }, "+=0.5");
     gsap.utils.toArray(".gvschemes__s img").forEach((img) => {
       TL_Schemes.to(img, {
         opacity: 1,
@@ -256,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, "-=0.1");
     });
     TL_Schemes.to({}, {
-      duration: 3
+      duration: 5
     });
 
     // SOCIAL MEDIA CAROUSEL
