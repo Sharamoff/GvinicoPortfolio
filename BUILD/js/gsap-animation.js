@@ -1,7 +1,7 @@
 // WOW
 
 if (window.innerWidth <= 576) {
-  document.querySelectorAll('.wow--mobile').forEach(el => {
+  document.querySelectorAll('.wow--mobile-off').forEach(el => {
     el.classList.remove('wow', 'animated');
     el.removeAttribute('data-wow-delay');
     el.removeAttribute('data-wow-duration');
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#gvillustration",
         start: "top top",
-        end: () => "+=" + window.innerHeight,
+        end: () => "+=" + window.innerHeight * 3,
         pin: true,
         pinSpacing: true,
         scrub: 1,
@@ -193,7 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
       x: 0,
       opacity: 1,
       duration: 3
-    }, "-=0.5");
+      }, "+=1");
+    TL_Illustration.to({}, {
+      duration: 3
+    });
 
 
     // ========================================================
@@ -204,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#gvmap",
         start: "top top",
-        end: () => "+=" + window.innerHeight,
+        end: () => "+=" + window.innerHeight * 3,
         pin: true,
         pinSpacing: true,
         scrub: 3,
@@ -218,6 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 3,
       ease: "power2.out"
     });
+    TL_Map.to({}, {
+      duration: 3
+    });
 
 
     // ========================================================
@@ -228,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#gvschemes",
         start: "top top",
-        end: () => "+=" + window.innerHeight,
+        end: () => "+=" + window.innerHeight * 3,
         pin: true,
         pinSpacing: true,
         scrub: 3,
@@ -241,7 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.5,
       ease: "power2.out"
     });
-
     gsap.utils.toArray(".gvschemes__s img").forEach((img) => {
       TL_Schemes.to(img, {
         opacity: 1,
@@ -251,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, "-=0.1");
     });
     TL_Schemes.to({}, {
-      duration: 5
+      duration: 3
     });
 
     // SOCIAL MEDIA CAROUSEL
@@ -345,7 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: "#gvsocialmedia",
         start: "top top",
-        end: () => "+=" + (window.innerHeight * 4),
+        end: () => "+=" + (window.innerHeight * 3),
         pin: true,
         pinSpacing: true,
         scrub: 2,
@@ -354,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     TL_SocialMedia.to({}, {
-      duration: 1
+      duration: 3
     });
 
     // Carousel
