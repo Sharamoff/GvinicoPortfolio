@@ -17,11 +17,17 @@
 	}
 
 	.taskdesc {
-		padding: 20px 0 0 0;
+		padding: 0;
 
 		&.td--problem {
-			margin-left: 10%;
+			flex: 1;
+			padding: 10px 10%;
 			width: clamp(200px, 40vw, 600px);
+
+			@media (width <= $size-md) {
+				width: 50vw;
+				padding: 20px 30px 0 30px;
+			}
 
 			@media (width <= $size-sm) {
 				margin-left: 0;
@@ -32,8 +38,14 @@
 		}
 
 		&.td--solution {
-			margin-right: 10%;
+			flex: 1;
+			padding: 10px 10%;
 			width: clamp(200px, 30vw, 600px);
+
+			@media (width <= $size-md) {
+				width: 50vw;
+				padding: 20px 30px 0 30px;
+			}
 
 			@media (width <= $size-sm) {
 				margin-right: 0;
@@ -51,11 +63,11 @@
 	display: grid;
 	grid-template-columns: repeat(8, minmax(80px, 140px));
 	grid-template-rows: auto;
-	gap: clamp(10px, calc((100vw - 1400px) * 0.1), 30px);
+	gap: 10px;
 	justify-content: center;
 	align-content: center;
 	max-height: min-content;
-	padding: 20px 15px;
+	padding: 5px 15px 30px 15px;
 
 	@media (width <= $size-md) {
 		grid-template-columns: repeat(6, minmax(80px, 140px));

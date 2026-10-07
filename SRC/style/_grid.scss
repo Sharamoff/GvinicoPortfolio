@@ -72,6 +72,10 @@ a {
 .taskdesc {
 	padding: 10px 20%;
 
+	@media (width <= $size-md) {
+		padding: 20px 30px;
+	}
+
 	@media (width <= $size-sm) {
 		padding: 20px 15px 0 15px;
 		text-align: center;

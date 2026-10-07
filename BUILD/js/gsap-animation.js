@@ -1,6 +1,6 @@
 // WOW
 
-if (window.innerWidth <= 576) {
+if (window.innerWidth <= 576 || window.innerHeight <= 576) {
   document.querySelectorAll('.wow--mobile-off').forEach(el => {
     el.classList.remove('wow', 'animated');
     el.removeAttribute('data-wow-delay');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // DESKTOP
 
-  mm.add("(min-width: 577px)", () => {
+  mm.add("(min-width: 577px) and (min-height: 577px)", () => {
 
     gsap.set([
       ".gvlogo-biglogo img",
@@ -466,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // SOCIAL MEDIA — MOBILE
 
-  const isMobile = window.innerWidth <= 576;
+  const isMobile = window.innerWidth <= 576 || window.innerHeight <= 576;
 
   if (isMobile) {
     let touchStartX = 0;
@@ -543,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // MOBILE GSAP
 
-  mm.add("(max-width: 576px)", () => {
+  mm.add("(max-width: 576px), (max-height: 576px)", () => {
 
     gsap.set([
       ".gvlogo-biglogo img",
