@@ -12,13 +12,17 @@ new WOW().init();
 
 
 
-// GSAP
-
-gsap.registerPlugin(ScrollTrigger, Draggable);
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
+
+  const isMobile = window.innerWidth <= 576 || window.innerHeight <= 576;
+
+  if (isMobile) {
+    initMobileCarousel();
+    return;
+  }
+
+  // GSAP is initialized only above the mobile viewport limits.
+  gsap.registerPlugin(ScrollTrigger, Draggable);
 
   const mm = gsap.matchMedia();
 
@@ -196,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       x: 0,
       opacity: 1,
       duration: 3
-      }, "+=1");
+    }, "+=1");
     TL_Illustration.to({}, {
       duration: 2
     });
@@ -297,11 +301,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const carouselContainer =
-        document.querySelector(".socialmedia-animation");
+      document.querySelector(".socialmedia-animation");
     const saElements =
-        carouselContainer
-            ? carouselContainer.querySelectorAll(".sa")
-            : [];
+      carouselContainer
+        ? carouselContainer.querySelectorAll(".sa")
+        : [];
 
     let currentIndex = 3;
 
@@ -334,9 +338,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       saElements.forEach((el, i) => {
         el.style.display =
-            Math.abs(i - currentIndex) <= 3
-                ? "block"
-                : "none";
+          Math.abs(i - currentIndex) <= 3
+            ? "block"
+            : "none";
       });
 
     }
@@ -374,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
         onUpdate: () => {
           const newIndex =
-              Math.round(socialState.index);
+            Math.round(socialState.index);
           if (newIndex !== currentIndex) {
             currentIndex = newIndex;
             updateClasses();
@@ -464,21 +468,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // SOCIAL MEDIA — MOBILE
+  function initMobileCarousel() {
+    document
+      .querySelectorAll(".darr-scroll--first, .darr-scroll--sec")
+      .forEach((el) => {
+        el.style.opacity = "1";
+        el.style.visibility = "visible";
+        el.style.transform = "none";
+      });
 
-  const isMobile = window.innerWidth <= 576 || window.innerHeight <= 576;
-
-  if (isMobile) {
     let touchStartX = 0;
     let touchEndX = 0;
 
     const carouselContainer =
-        document.querySelector(".socialmedia-animation");
+      document.querySelector(".socialmedia-animation");
 
     const saElements =
-        carouselContainer
-            ? carouselContainer.querySelectorAll(".sa")
-            : [];
+      carouselContainer
+        ? carouselContainer.querySelectorAll(".sa")
+        : [];
 
     let currentIndex = 3;
 
@@ -498,81 +506,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (carouselContainer) {
       carouselContainer.addEventListener(
-          "touchstart",
-          (e) => {
-            touchStartX = e.touches[0].clientX;
-          },
-          { passive: true }
+        "touchstart",
+        (e) => {
+          touchStartX = e.touches[0].clientX;
+        },
+        { passive: true }
       );
       carouselContainer.addEventListener(
-          "touchmove",
-          (e) => {
-            touchEndX = e.touches[0].clientX;
-          },
-          { passive: true }
+        "touchmove",
+        (e) => {
+          touchEndX = e.touches[0].clientX;
+        },
+        { passive: true }
       );
       carouselContainer.addEventListener(
-          "touchend",
-          () => {
-            const threshold = 30;
-            const deltaX =
-                touchEndX - touchStartX;
-            if (Math.abs(deltaX) <= threshold) {
-              return;
-            }
-            if (deltaX < 0) {
-              currentIndex =
-                  Math.min(
-                      currentIndex + 1,
-                      saElements.length - 1
-                  );
-            } else {
-              currentIndex =
-                  Math.max(
-                      currentIndex - 1,
-                      0
-                  );
-            }
-            updateMobileClasses();
+        "touchend",
+        () => {
+          const threshold = 30;
+          const deltaX =
+            touchEndX - touchStartX;
+          if (Math.abs(deltaX) <= threshold) {
+            return;
           }
+          if (deltaX < 0) {
+            currentIndex =
+              Math.min(
+                currentIndex + 1,
+                saElements.length - 1
+              );
+          } else {
+            currentIndex =
+              Math.max(
+                currentIndex - 1,
+                0
+              );
+          }
+          updateMobileClasses();
+        }
       );
     }
 
   }
-
-
-  // MOBILE GSAP
-
-  mm.add("(max-width: 576px), (max-height: 576px)", () => {
-
-    gsap.set([
-      ".gvlogo-biglogo img",
-      ".gvillustration__l .g1",
-      ".gvillustration__l .g2-l",
-      ".gvillustration__l .g2-r",
-      ".gvillustration__l .g4-l",
-      ".gvillustration__r .g4-r",
-      ".gvillustration__r .g3-l",
-      ".gvillustration__r .g3-r",
-      ".gvillustration__r .g0",
-      ".gvillustration__r .blockill-stains",
-      ".map-animation",
-      ".gvschemes__s",
-      ".gvschemes__s img",
-      ".darr-scroll--first",
-      ".darr-scroll--sec"
-    ], {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      scale: 1,
-      rotation: 0,
-      clearProps: "all"
-    });
-
-  });
-
-
 
   // LENIS + SCROLLTRIGGER SYNC
 
@@ -602,9 +576,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------------------------------------
 
   ScrollTrigger.addEventListener(
-      "refresh",
-      () => lenis.resize()
+    "refresh",
+    () => lenis.resize()
   );
   ScrollTrigger.refresh();
 
 });
+
