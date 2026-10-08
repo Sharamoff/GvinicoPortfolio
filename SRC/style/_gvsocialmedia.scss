@@ -4,7 +4,7 @@
 }
 
 .content-gvsocialmedia {
-	min-height: 100dvh;
+	min-height: 100svh;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, min-content) 1fr;
@@ -22,6 +22,11 @@
     "gvsocialmedia__tl"
     "gvsocialmedia__tr"
     "gvsocialmedia__c";
+
+		@media (height <= $size-sm) {
+			min-height: auto;
+		}
+
 	}
 
 	@media (max-width: 1024px), (hover: none) and (pointer: coarse) {

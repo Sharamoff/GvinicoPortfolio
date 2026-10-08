@@ -28,6 +28,10 @@
     "gvillustration__r";
 	}
 
+	@media (height <= $size-sm) {
+		min-height: auto;
+	}
+
 }
 
 .gvillustration__l,

@@ -19,11 +19,11 @@
 }
 
 .commingsoon {
+	min-height: 100svh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100dvh;
 
 	.commingsoon__img {
 		width: 200px;

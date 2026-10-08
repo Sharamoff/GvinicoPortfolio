@@ -1,11 +1,11 @@
 BODY {
 	background-color: $color-bk;
 	color: $color-main;
-	min-height: 100dvh;
 
 	@media (width <= $size-sm), (height <= $size-sm) {
 	    overflow-y: auto;
 	}
+
 }
 
 HTML {
@@ -24,7 +24,12 @@ HTML {
 
 .content {
   position: relative;
-	min-height: 100dvh;
+	min-height: 100svh;
+
+	@media (width <= $size-sm), (height <= $size-sm) {
+		min-height: auto;
+	}
+
 }
 
 

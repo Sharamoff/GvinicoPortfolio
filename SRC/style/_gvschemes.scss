@@ -5,6 +5,11 @@
 
 .content-gvschemes {
 	min-height: 100svh;
+
+	@media (height <= $size-sm) {
+		min-height: auto;
+	}
+
 }
 
 .gvschemes__c {

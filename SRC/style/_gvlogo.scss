@@ -26,6 +26,10 @@
 		"gvlogo__br";
 	}
 
+	@media (height <= $size-sm) {
+		min-height: auto;
+	}
+
 }
 
 .gvlogo__tl {
