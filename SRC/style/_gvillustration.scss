@@ -78,6 +78,10 @@
 		height: 330px;
 	}
 
+	@media (width <= 385px) {
+		height: 300px;
+	}
+
 	@media (height <= $size-sm) {
 		bottom: 0;
 	}
@@ -94,13 +98,16 @@
 		height: 240px;
 	}
 
+	@media (width <= 385px) {
+		height: 220px;
+	}
+
 }
 
 
 .ill-l {
 	position: relative;
 	height: 100%;
-
 
 	.g1 {
 		position: absolute;

@@ -35,6 +35,11 @@
 			width: 164px;
 		}
 
+		@media (height <= $size-sm) {
+			width: 120px;
+			margin-bottom: 0;
+		}
+
 	}
 
 	.commingsoon__cs {

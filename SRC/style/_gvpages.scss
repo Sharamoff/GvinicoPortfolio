@@ -3,7 +3,7 @@
 	min-height: 100dvh;
 	padding: 60px 0 60px 30px;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		padding: 1px 0;
 	}
 
@@ -19,7 +19,7 @@
 	max-width: 1200px;
 	margin: 60px auto;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		display: flex;
 		flex-direction: column;
 		justify-content: start;
@@ -39,7 +39,7 @@
 	color: $c-white;
 	font: 200 110px / 1 $font-family;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		width: auto;
 		max-width: none;
 		text-align: left;
@@ -60,7 +60,7 @@
 		margin: 0;
 		font: 50px / 1 $font-family-big;
 
-		@media (width <= $size-md) {
+		@media (width <= $size-md), (height <= $size-sm) {
 			margin: 0 0 -4px;
 			font-size: 42px;
 			text-align: center;
@@ -71,7 +71,7 @@
 	p {
 		max-width: 510px;
 
-		@media (width <= $size-md) {
+		@media (width <= $size-md), (height <= $size-sm) {
 			max-width: none;
 			text-align: center;
 		}
@@ -86,7 +86,7 @@
 	gap: 10px;
 	justify-content: flex-start;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		justify-content: center;
 	}
 
@@ -101,7 +101,7 @@
 		overflow: hidden;
 		cursor: pointer;
 
-		@media (width <= $size-md) {
+		@media (width <= $size-md), (height <= $size-sm) {
 			width: 48%;
 		}
 
@@ -137,7 +137,7 @@
 	border-top: solid 1px #C7A358;
 	padding-top: 60px;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		width: calc(100% - 30px);
 		margin: 30px auto 60px auto;
 		padding-top: 30px;
@@ -156,7 +156,7 @@
 		padding: 10px 14px;
 		border-radius: 4px;
 
-		@media (width <= $size-sm) {
+		@media (width <= $size-sm), (height <= $size-sm) {
 			font-size: 22px;
 		}
 

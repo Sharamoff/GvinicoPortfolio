@@ -71,10 +71,16 @@
 		min-height: 704px;
 	}
 
-	@media (width <= $size-sm), (height <= $size-sm) {
+	@media (width <= $size-sm) {
 		display: block;
 		background-size: 600px auto;
 		min-height: 557px;
+	}
+
+	@media (height <= $size-sm) {
+		display: block;
+		background-size: 460px auto;
+		min-height: 360px;
 	}
 
 	img {
@@ -100,8 +106,12 @@
 	margin-top: 54px;
 	display: none;
 
-	@media (width <= $size-sm), (height <= $size-sm) {
+	@media (width <= $size-sm) {
 		margin-top: 42px;
+	}
+
+	@media (height <= $size-sm) {
+		margin-top: 28px;
 	}
 
 	img {
@@ -109,9 +119,14 @@
 		height: auto;
 		border-radius: 6px;
 
-		@media (width <= $size-sm), (height <= $size-sm) {
+		@media (width <= $size-sm) {
 			width: 210px;
 		}
+
+		@media (height <= $size-sm) {
+			width: 164px;
+		}
+
 	}
 
 	&.sa--active {

@@ -96,6 +96,7 @@ a {
 		color: $c-red;
 
 		@media (width <= $size-sm), (height <= $size-sm) {
+			font-size: 1.4rem;
 			margin-bottom: 5px;
 		}
 
@@ -148,7 +149,7 @@ a {
 	bottom: 0;
 	text-align: center;
 
-	@media (width <= $size-sm) {
+	@media (width <= $size-sm), (height <= $size-sm) {
 		img {
 			height: 50px;
 			width: auto;
@@ -165,7 +166,7 @@ a {
 		line-height: 1;
 		text-transform: uppercase;
 
-		@media (width <= $size-sm) {
+		@media (width <= $size-sm), (height <= $size-sm) {
 			margin-bottom: 20px;
 			font-size: 32px;
 		}

@@ -11,20 +11,20 @@
 	align-content: center;
 	width: calc(100% - 60px);
 	max-width: 1210px;
-	height: 100dvh;
+	min-height: 100dvh;
 	margin: 0 auto;
 	padding: 60px 0;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		display: flex;
 		flex-direction: column;
-		justify-content: start;
+		justify-content: center;
 		align-items: center;
 		gap: 12px;
 		width: calc(100% - 30px);
 		height: auto;
 		min-height: 100dvh;
-		padding: 30px 0;
+		padding: 30px 0 60px 0;
 	}
 
 }
@@ -34,17 +34,17 @@
 	max-width: 200px;
 	margin-top: -65px;
 
+	@media (width <= $size-md), (height <= $size-sm) {
+		width: 120px;
+		max-width: 120px;
+		align-content: center;
+		margin-top: 0;
+	}
+
 	img {
 		display: block;
 		width: 100%;
 		height: auto;
-	}
-
-	@media (width <= $size-md) {
-		width: 160px;
-		max-width: 160px;
-		align-content: center;
-		margin-top: 0;
 	}
 
 }
@@ -56,7 +56,7 @@
 	text-wrap: pretty;
 	line-height: 1.4;
 
-	@media (width <= $size-md) {
+	@media (width <= $size-md), (height <= $size-sm) {
 		text-align: center;
 	}
 
@@ -69,7 +69,7 @@
 		font: 50px $font-family-big;
 		color: $c-white;
 
-		@media (width <= $size-md) {
+		@media (width <= $size-md), (height <= $size-sm) {
 			margin: 0 0 -4px;
 			font-size: 40px;
 		}
